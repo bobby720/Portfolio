@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="About Eswara Sai – AI Application Architect & Full Stack Developer"/>
+  <title>About · Eswara Sai</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ── About Page Specific ─────────────────────────────── */
+    .about-page-hero {
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 10rem 8vw 5rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-page-hero::before {
+      content: '';
+      position: absolute; top: -20%; right: -10%;
+      width: 60vw; height: 60vw;
+      background: radial-gradient(circle, rgba(212,175,55,.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .about-page-hero .back-link {
+      font-family: var(--font-mono);
+      font-size: .65rem;
+      letter-spacing: .3em;
+      color: var(--text-sec);
+      text-transform: uppercase;
+      display: flex; align-items: center; gap: .7rem;
+      margin-bottom: 3rem;
+      transition: color .3s;
+      position: relative; z-index: 1;
+    }
+    .about-page-hero .back-link:hover { color: var(--gold); }
+    .about-page-hero .back-link i { font-size: .7rem; }
+    .about-page-hero .page-eyebrow {
+      font-family: var(--font-mono);
+      font-size: .7rem; letter-spacing: .5em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      position: relative; z-index: 1;
+    }
+    .about-page-hero .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 300;
+      line-height: .95;
+      position: relative; z-index: 1;
+    }
+    .about-page-hero .page-title em { color: var(--gold); font-style: italic; }
+
+    /* About body layout */
+    .about-body { background: var(--bg-secondary); }
+    .about-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+      margin-top: 5rem;
+    }
+    .about-text p {
+      font-size: 1.05rem; line-height: 1.9;
+      color: var(--text-sec); margin-bottom: 1.5rem;
+    }
+    .about-text p span { color: var(--gold); }
+    .about-cards { display: flex; flex-direction: column; gap: 1.2rem; }
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.6rem 2rem;
+      position: relative; overflow: hidden;
+      transition: border-color .4s, box-shadow .4s, transform .4s var(--ease-luxury);
+    }
+    .about-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 3px; height: 0;
+      background: var(--gold);
+      transition: height .5s var(--ease-luxury);
+    }
+    .about-card:hover::before { height: 100%; }
+    .about-card:hover {
+      border-color: rgba(212,175,55,.4);
+      box-shadow: 0 0 40px rgba(212,175,55,.08);
+      transform: translateX(6px);
+    }
+    .about-card-icon { font-size: 1.4rem; margin-bottom: .8rem; }
+    .about-card h4 {
+      font-family: var(--font-mono); font-size: .72rem;
+      letter-spacing: .2em; color: var(--gold);
+      text-transform: uppercase; margin-bottom: .6rem;
+    }
+    .about-card p { font-size: .92rem; color: var(--text-sec); line-height: 1.6; }
+    .about-focus-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
+    .about-focus-tag {
+      font-family: var(--font-mono); font-size: .62rem;
+      letter-spacing: .1em; padding: .3rem .8rem;
+      border: 1px solid var(--border); border-radius: 2px;
+      color: var(--text-sec); transition: all .3s;
+    }
+    .about-card:hover .about-focus-tag { border-color: rgba(212,175,55,.3); color: var(--gold); }
+
+    /* Skills within about */
+    .skills-section { padding: 6rem 8vw; background: var(--bg-primary); }
+    .skills-categories { margin-top: 5rem; display: flex; flex-direction: column; gap: 4rem; }
+    .skills-category-label {
+      font-family: var(--font-mono); font-size: .68rem;
+      letter-spacing: .4em; color: var(--text-sec);
+      text-transform: uppercase; margin-bottom: 1.5rem;
+      padding-bottom: .8rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.6rem 1.2rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+      transition: all .4s var(--ease-luxury);
+      cursor: none;
+    }
+    .skill-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 100%, rgba(212,175,55,.08), transparent 70%);
+      opacity: 0; transition: opacity .4s;
+    }
+    .skill-card:hover::before { opacity: 1; }
+    .skill-card:hover {
+      border-color: rgba(212,175,55,.5);
+      box-shadow: 0 0 35px rgba(212,175,55,.12);
+      transform: translateY(-6px);
+    }
+    .skill-icon { font-size: 2rem; margin-bottom: .8rem; display: block; transition: transform .4s var(--ease-spring); }
+    .skill-card:hover .skill-icon { transform: scale(1.15); }
+    .skill-name {
+      font-family: var(--font-ui); font-size: .82rem;
+      font-weight: 600; letter-spacing: .06em;
+      color: var(--text); margin-bottom: .8rem;
+    }
+    .skill-bar { width: 100%; height: 2px; background: rgba(255,255,255,.06); border-radius: 1px; overflow: hidden; }
+    .skill-bar-fill {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+      border-radius: 1px;
+      transition: width 1.2s var(--ease-luxury);
+    }
+
+    /* Timeline within about */
+    .timeline-section { padding: 6rem 8vw; background: var(--bg-secondary); }
+
+    /* CTA strip */
+    .about-cta-strip {
+      padding: 6rem 8vw;
+      background: var(--bg-primary);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 3rem; flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+    }
+    .about-cta-strip h3 {
+      font-family: var(--font-display); font-size: 2.5rem;
+      font-weight: 300;
+    }
+    .about-cta-strip h3 em { color: var(--gold); font-style: italic; }
+    .about-cta-strip .cta-buttons { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      .about-intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-cta-strip { flex-direction: column; text-align: center; }
+      .about-cta-strip .cta-buttons { justify-content: center; }
+    }
+    @media (max-width: 600px) {
+      .about-page-hero { padding: 9rem 6vw 4rem; }
+      .skills-section, .timeline-section { padding: 5rem 6vw; }
+      .about-cta-strip { padding: 5rem 6vw; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Noise overlay ───────────────────────────────────────── -->
+<div id="noise"></div>
+
+<!-- ── Custom Cursor ───────────────────────────────────────── -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- ── Mouse Light ─────────────────────────────────────────── -->
+<div id="mouse-light"></div>
+
+<!-- ── Particles ───────────────────────────────────────────── -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════════════════ -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">ES</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="index.html#projects">Projects</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════════════ -->
+<div class="about-page-hero">
+  <a href="index.html" class="back-link reveal">
+    <i class="fas fa-arrow-left"></i> Back to Portfolio
+  </a>
+  <p class="page-eyebrow reveal">✦ The Story</p>
+  <h1 class="page-title reveal" data-delay="1">Crafted From<br><em>Curiosity</em></h1>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ABOUT INTRO
+═══════════════════════════════════════════════════════════ -->
+<section class="about-body">
+  <div class="about-intro-grid">
+    <!-- Left – Bio -->
+    <div class="about-text reveal-left" data-delay="2">
+      <p>
+        I am <span>Eswara Sai</span>, an aspiring <span>AI Application Architect</span>
+        and Full Stack Java Developer on a mission to bridge the gap between intelligent
+        machines and meaningful software experiences.
+      </p>
+      <p>
+        My journey is driven by a passion for building systems that are not just
+        functional — but <span>transformative</span>. Every line of code I write
+        carries the intent to solve real‑world problems at scale.
+      </p>
+      <p>
+        Currently deepening my expertise in <span>React</span>, <span>Spring Boot</span>,
+        and <span>AI integration patterns</span> while laying the foundation for
+        a career in enterprise AI architecture.
+      </p>
+      <div class="gold-divider"></div>
+      <p style="font-family:var(--font-mono);font-size:.75rem;letter-spacing:.15em;color:var(--gold);">
+        ✦ &nbsp; Available for Internships &amp; Collaborations
+      </p>
+    </div>
+
+    <!-- Right – Info Cards -->
+    <div class="about-cards" id="about-cards"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SKILLS
+═══════════════════════════════════════════════════════════ -->
+<section class="skills-section">
+  <p class="section-label reveal">Capabilities</p>
+  <h2 class="section-title reveal" data-delay="1">Technical<br><em>Mastery</em></h2>
+  <div class="skills-categories" id="skills-container"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TIMELINE
+═══════════════════════════════════════════════════════════ -->
+<section class="timeline-section">
+  <p class="section-label reveal">Journey</p>
+  <h2 class="section-title reveal" data-delay="1">My<br><em>Timeline</em></h2>
+  <div class="timeline-wrap">
+    <div class="timeline-line"></div>
+    <div class="timeline-items" id="timeline-items"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CTA STRIP
+═══════════════════════════════════════════════════════════ -->
+<div class="about-cta-strip">
+  <h3>Ready to build<br><em>something great?</em></h3>
+  <div class="cta-buttons">
+    <a href="index.html#projects" class="btn btn-outline">View Projects</a>
+    <a href="index.html#contact" class="btn btn-gold">Get in Touch</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-line"></div>
+  <p class="footer-name" id="footer-name"></p>
+  <p class="footer-title" id="footer-title"></p>
+  <div class="footer-socials" id="footer-socials"></div>
+  <p class="footer-copy" id="footer-copy"></p>
+</footer>
+
+<!-- ─── Scripts ─────────────────────────────────────────────── -->
+<script src="data.js"></script>
+<script>
+/* ── Skill icons / levels ─────────────────────────────────── */
+const SKILL_ICONS = {
+  'HTML':'<i class="fab fa-html5"></i>',
+  'CSS':'<i class="fab fa-css3-alt"></i>',
+  'JavaScript':'<i class="fab fa-js-square"></i>',
+  'React':'<i class="fab fa-react"></i>',
+  'Java':'<i class="fab fa-java"></i>',
+  'Spring Boot':'<i class="fas fa-leaf"></i>',
+  'Python':'<i class="fab fa-python"></i>',
+  'MySQL':'<i class="fas fa-database"></i>',
+  'Git':'<i class="fab fa-git-alt"></i>',
+  'GitHub':'<i class="fab fa-github"></i>',
+  'VS Code':'<i class="fas fa-code"></i>',
+  'IntelliJ IDEA':'<i class="fas fa-infinity"></i>'
+};
+const SKILL_LEVELS = {
+  'HTML':100,'CSS':100,'JavaScript':100,'React':100,
+  'Java':100,'Spring Boot':100,'Python':100,
+  'MySQL':100,
+  'Git':100,'GitHub':100,'VS Code':100,'IntelliJ IDEA':100
+};
+
+/* ── About Cards ──────────────────────────────────────────── */
+(function () {
+  const container = document.getElementById('about-cards');
+  if (!container) return;
+  const cards = [
+    { icon:'◎', heading:'Career Goal',     text:'To architect and deploy production-grade AI applications that create measurable impact at enterprise scale.' },
+    { icon:'◫', heading:'Education',       text:'Pursuing a degree in Computer Science with a focus on Software Engineering and Artificial Intelligence.' },
+    { icon:'◈', heading:'Learning Journey',text:'Self-driven learner exploring open-source ecosystems, technical documentation, and hands-on project building.' },
+    {
+      icon:'✦', heading:'Current Focus', isTagCard: true,
+      tags: (DATA.skills ? Object.values(DATA.skills).flat().slice(0,6)
+             : ['AI Architecture','Java Full Stack','React','Spring Boot','System Design'])
+    }
+  ];
+  cards.forEach((c, i) => {
+    const div = document.createElement('div');
+    div.className = 'about-card reveal';
+    div.dataset.delay = i + 2;
+    div.innerHTML = `
+      <div class="about-card-icon">${c.icon}</div>
+      <h4>${c.heading}</h4>
+      ${c.isTagCard
+        ? `<div class="about-focus-tags">${c.tags.map(t=>`<span class="about-focus-tag">${t}</span>`).join('')}</div>`
+        : `<p>${c.text}</p>`}
+    `;
+    container.appendChild(div);
+  });
+})();
+
+/* ── Skills ───────────────────────────────────────────────── */
+(function () {
+  const container = document.getElementById('skills-container');
+  if (!container || !DATA.skills) return;
+  Object.entries(DATA.skills).forEach(([cat, list]) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'skills-category reveal';
+    const label = document.createElement('p');
+    label.className = 'skills-category-label';
+    label.textContent = cat;
+    wrap.appendChild(label);
+    const grid = document.createElement('div');
+    grid.className = 'skills-grid';
+    list.forEach(skill => {
+      const level = SKILL_LEVELS[skill] || 75;
+      const card  = document.createElement('div');
+      card.className = 'skill-card';
+      card.innerHTML = `
+        <span class="skill-icon">${SKILL_ICONS[skill] || '⬡'}</span>
+        <p class="skill-name">${skill}</p>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="${level}%"></div></div>
+      `;
+      grid.appendChild(card);
+    });
+    wrap.appendChild(grid);
+    container.appendChild(wrap);
+  });
+})();
+
+/* ── Timeline ─────────────────────────────────────────────── */
+(function () {
+  const container = document.getElementById('timeline-items');
+  if (!container || !DATA.timeline) return;
+  DATA.timeline.forEach((t, i) => {
+    const item = document.createElement('div');
+    item.className = 'timeline-item reveal';
+    item.dataset.delay = i + 1;
+    item.innerHTML = `
+      <div class="timeline-dot"><div class="timeline-dot-inner">${t.icon || '✦'}</div></div>
+      <div class="timeline-content">
+        <p class="timeline-year">${t.year}</p>
+        <h3 class="timeline-title">${t.title}</h3>
+        <p class="timeline-desc">${t.description}</p>
+      </div>
+    `;
+    container.appendChild(item);
+  });
+})();
+
+/* ── Footer ───────────────────────────────────────────────── */
+(function () {
+  const nameEl    = document.getElementById('footer-name');
+  const titleEl   = document.getElementById('footer-title');
+  const socialsEl = document.getElementById('footer-socials');
+  const copyEl    = document.getElementById('footer-copy');
+  if (nameEl)  nameEl.textContent  = DATA.name  || 'Eswara Sai';
+  if (titleEl) titleEl.textContent = DATA.title || 'AI Application Architect';
+  if (socialsEl) {
+    const socials = [
+      { icon:'fab fa-linkedin-in', href: DATA.linkedin  || '#', label:'LinkedIn' },
+      { icon:'fab fa-instagram',   href: DATA.instagram || '#', label:'Instagram' },
+      { icon:'fab fa-github',      href: DATA.github    || '#', label:'GitHub' },
+      { icon:'fas fa-envelope',    href:'mailto:' + (DATA.email || ''), label:'Email' }
+    ];
+    socials.forEach(s => {
+      const a = document.createElement('a');
+      a.className = 'footer-social';
+      a.href = s.href; a.title = s.label; a.target = '_blank';
+      a.innerHTML = `<i class="${s.icon}"></i>`;
+      socialsEl.appendChild(a);
+    });
+  }
+  if (copyEl) copyEl.textContent = `© ${new Date().getFullYear()} ${DATA.name || 'Eswara Sai'} · Crafted with precision`;
+})();
+</script>
+<script src="script.js"></script>
+</body>
+</html>

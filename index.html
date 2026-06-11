@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Eswara Sai – AI Application Architect & Full Stack Developer"/>
+  <title>Eswara Sai · AI Application Architect</title>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ── Noise overlay ───────────────────────────────────────── -->
+<div id="noise"></div>
+
+<!-- ── Custom Cursor ───────────────────────────────────────── -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- ── Mouse Light ─────────────────────────────────────────── -->
+<div id="mouse-light"></div>
+
+<!-- ── Particles ───────────────────────────────────────────── -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ── Lightbox ────────────────────────────────────────────── -->
+<div id="lightbox">
+  <span id="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="Gallery preview"/>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     LOADING SCREEN
+═══════════════════════════════════════════════════════════ -->
+<div id="loader">
+  <canvas id="loader-canvas"></canvas>
+  <div id="loader-content">
+    <h1 id="loader-name">
+      <!-- Letters injected by JS below -->
+    </h1>
+    <p id="loader-title">ASPIRING AI APPLICATION ARCHITECT</p>
+    <div id="loader-bar"><div id="loader-bar-fill"></div></div>
+    <p id="loader-percent">0%</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════════════════ -->
+<nav id="navbar">
+  <span class="nav-logo">ES</span>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu">
+  <a href="#hero">Home</a>
+  <a href="about.html">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <!-- Left -->
+  <div class="hero-text">
+    <p class="hero-eyebrow">✦</p>
+    <h1 class="hero-name">
+      ESWARA<br>
+      <em>SAI</em>
+    </h1>
+    <p class="hero-subtitle">AI Application Architect</p>
+    <p class="hero-desc">Building intelligent products that solve real‑world problems using software and artificial intelligence.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-gold">Explore Projects</a>
+      <a href="#contact"  class="btn btn-outline">Contact Me</a>
+    </div>
+  </div>
+
+  <!-- Right – Profile Image -->
+  <div class="hero-image-wrap">
+    <div class="hero-image-ring"></div>
+    <div class="hero-image-ring-2"></div>
+    <img
+      id="hero-profile-img"
+      class="hero-profile"
+      src="#"
+      alt="Eswara Sai"
+      onerror="this.style.display='none'; document.getElementById('hero-profile-placeholder').style.display='flex';"
+    />
+    <div id="hero-profile-placeholder" class="hero-profile-placeholder" style="display:none;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+        <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+      </svg>
+      <span>profile photo</span>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-hint-line"></div>
+  </div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PROJECTS
+═══════════════════════════════════════════════════════════ -->
+<section id="projects">
+  <p class="section-label reveal">Work</p>
+  <h2 class="section-title reveal" data-delay="1"><em>Projects</em></h2>
+  <div class="projects-grid" id="projects-grid"></div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CERTIFICATES
+═══════════════════════════════════════════════════════════ -->
+<section id="certificates" style="background:var(--bg-secondary)">
+  <p class="section-label reveal">Credentials</p>
+  <h2 class="section-title reveal" data-delay="1">Certificates &amp;<br><em>Achievements</em></h2>
+  <div id="certs-container"></div>
+  <div id="achievements-container"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     GALLERY
+═══════════════════════════════════════════════════════════ -->
+<section id="gallery">
+  <p class="section-label reveal">Gallery</p>
+  <h2 class="section-title reveal" data-delay="1">Visual<br><em>Journal</em></h2>
+  <div class="masonry-grid" id="gallery-grid"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     GITHUB
+═══════════════════════════════════════════════════════════ -->
+<section id="github">
+  <p class="section-label reveal">Open Source</p>
+  <h2 class="section-title reveal" data-delay="1">GitHub<br><em>Activity</em></h2>
+  <div class="github-grid" id="github-grid"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════════════════════ -->
+<section id="contact" style="background:var(--bg-secondary)">
+  <p class="section-label reveal">Connect</p>
+  <h2 class="section-title reveal" data-delay="1">Let's Build<br><em>Together</em></h2>
+
+  <div class="contact-grid">
+    <div class="contact-info reveal-left" data-delay="2">
+      <h3>Have a project in mind?</h3>
+      <p>Whether it's an AI-powered application, a full stack system, or a bold new product idea — I'd love to hear about it.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon"><i class="fa fa-envelope"></i></div>
+        <span id="contact-email"></span>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon"><i class="fab fa-github"></i></div>
+        <span id="contact-github-user"></span>
+      </div>
+    </div>
+
+    <form class="contact-form reveal-right" data-delay="3" id="contact-form">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" placeholder="Your full name" required/>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="your@email.com" required/>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell me about your project…" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold">Send Message</button>
+      <p class="form-note" id="form-note">✦ Message received — I'll be in touch shortly.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-line"></div>
+  <p class="footer-name" id="footer-name"></p>
+  <p class="footer-title" id="footer-title"></p>
+  <div class="footer-socials" id="footer-socials"></div>
+  <p class="footer-copy" id="footer-copy"></p>
+</footer>
+
+<!-- ─── Scripts ─────────────────────────────────────────────── -->
+<script src="data.js"></script>
+<script>
+/* ============================================================
+   Inline bootstrap – runs after data.js is loaded,
+   populates the DOM from DATA before script.js runs.
+   ============================================================ */
+
+// ── Loader letters ──────────────────────────────────────────
+(function () {
+  const nameEl = document.getElementById('loader-name');
+  if (!nameEl) return;
+  const full = (DATA.name || 'ESWARA SAI').toUpperCase();
+  nameEl.innerHTML = full.split('').map(c =>
+    c === ' ' ? '<span style="width:.4em;display:inline-block;"></span>'
+              : `<span>${c}</span>`
+  ).join('');
+})();
+
+// ── Skill icons map ─────────────────────────────────────────
+const SKILL_ICONS = {
+  'HTML':'<i class="fab fa-html5"></i>',
+  'CSS':'<i class="fab fa-css3-alt"></i>',
+  'JavaScript':'<i class="fab fa-js-square"></i>',
+  'React':'<i class="fab fa-react"></i>',
+  'Java':'<i class="fab fa-java"></i>',
+  'Spring Boot':'<i class="fas fa-leaf"></i>',
+  'Python':'<i class="fab fa-python"></i>',
+  'MySQL':'<i class="fas fa-database"></i>',
+  'Git':'<i class="fab fa-git-alt"></i>',
+  'GitHub':'<i class="fab fa-github"></i>',
+  'VS Code':'<i class="fas fa-code"></i>',
+  'IntelliJ IDEA':'<i class="fas fa-infinity"></i>'
+};
+const SKILL_LEVELS = {
+  'HTML':100,'CSS':100,'JavaScript':100,'React':100,
+  'Java':100,'Spring Boot':100,'Python':100,
+  'MySQL':100,
+  'Git':100,'GitHub':100,'VS Code':100,'IntelliJ IDEA':100
+};
+
+
+
+// ── Projects ────────────────────────────────────────────────
+(function () {
+  const grid = document.getElementById('projects-grid');
+  if (!grid || !DATA.projects) return;
+
+  DATA.projects.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'project-card reveal';
+    card.dataset.delay = (i % 3) + 1;
+
+    const imgHtml = p.image
+      ? `<img class="project-img" src="${p.image}" alt="${p.title}"
+             onerror="this.outerHTML='<div class=\\'project-img-placeholder\\'>${p.title}</div>'">`
+      : `<div class="project-img-placeholder">${p.title}</div>`;
+
+    const techTags = (p.tech || []).map(t => `<span class="tech-tag">${t}</span>`).join('');
+    const ghBtn    = p.github
+      ? `<a href="${p.github}" class="btn btn-outline btn-sm" target="_blank"><i class="fab fa-github"></i> GitHub</a>`
+      : '';
+    const liveBtn  = p.live && p.live !== '#'
+      ? `<a href="${p.live}" class="btn btn-gold btn-sm" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>`
+      : '';
+
+    card.innerHTML = `
+      ${imgHtml}
+      <div class="project-body">
+        <h3 class="project-title">${p.title}</h3>
+        <p class="project-desc">${p.description}</p>
+        <div class="project-tech">${techTags}</div>
+        <div class="project-links">${ghBtn}${liveBtn}</div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+})();
+
+// ── Timeline ─────────────────────────────────────────────────
+(function () {
+  const container = document.getElementById('timeline-items');
+  if (!container || !DATA.timeline) return;
+
+  DATA.timeline.forEach((t, i) => {
+    const item = document.createElement('div');
+    item.className = 'timeline-item reveal';
+    item.dataset.delay = i + 1;
+    item.innerHTML = `
+      <div class="timeline-dot">
+        <div class="timeline-dot-inner">${t.icon || '✦'}</div>
+      </div>
+      <div class="timeline-content">
+        <p class="timeline-year">${t.year}</p>
+        <h3 class="timeline-title">${t.title}</h3>
+        <p class="timeline-desc">${t.description}</p>
+      </div>
+    `;
+    container.appendChild(item);
+  });
+})();
+
+// ── Certificates & Achievements ──────────────────────────────
+(function () {
+  function renderDynamicSection(containerId, items, emptyMsg) {
+    const c = document.getElementById(containerId);
+    if (!c) return;
+    if (!items || items.length === 0) {
+      c.innerHTML = `<p class="section-empty">${emptyMsg}</p>`;
+      return;
+    }
+    const grid = document.createElement('div');
+    grid.className = 'dynamic-grid';
+    items.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'dynamic-card reveal';
+      card.innerHTML = `
+        ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ''}
+        <div class="dynamic-card-body">
+          <h4>${item.title}</h4>
+          ${item.description ? `<p>${item.description}</p>` : ''}
+          ${item.issuer ? `<p class="dynamic-card-meta">${item.issuer}</p>` : ''}
+          ${item.date   ? `<p class="dynamic-card-meta">${item.date}</p>` : ''}
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+    c.appendChild(grid);
+  }
+
+  renderDynamicSection('certs-container', DATA.certificates,
+    '✦ Certificates will appear here once added to data.js');
+  renderDynamicSection('achievements-container', DATA.achievements,
+    '✦ Achievements will appear here once added to data.js');
+})();
+
+// ── Gallery ──────────────────────────────────────────────────
+(function () {
+  const grid = document.getElementById('gallery-grid');
+  if (!grid) return;
+
+  if (!DATA.gallery || DATA.gallery.length === 0) {
+    grid.innerHTML = `<p class="section-empty">✦ Gallery images will appear here once added to data.js</p>`;
+    return;
+  }
+
+  DATA.gallery.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'masonry-item';
+    div.innerHTML = `<img src="${item.src}" alt="${item.caption || ''}">`;
+    grid.appendChild(div);
+  });
+})();
+
+// ── GitHub Section ───────────────────────────────────────────
+(function () {
+  const u    = DATA.githubUsername || 'bobby720';
+  const grid = document.getElementById('github-grid');
+  if (!grid) return;
+
+  const cards = [
+    {
+      label: 'GitHub Stats',
+      src: `https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=transparent&title_color=D4AF37&icon_color=D4AF37&text_color=B8B8B8&border_color=2a2a2a&hide_border=false`
+    },
+    {
+      label: 'GitHub Streak',
+      src: `https://streak-stats.demolab.com?user=${u}&theme=transparent&ring=D4AF37&fire=FFD700&currStreakLabel=D4AF37&sideNums=B8B8B8&dates=555&border=2a2a2a`
+    },
+    {
+      label: 'Top Languages',
+      src: `https://github-readme-stats.vercel.app/api/top-langs/?username=${u}&layout=compact&theme=transparent&title_color=D4AF37&text_color=B8B8B8&border_color=2a2a2a`
+    },
+    {
+      label: 'Contribution Graph',
+      src: `https://github-readme-activity-graph.vercel.app/graph?username=${u}&theme=react-dark&color=D4AF37&line=D4AF37&point=FFD700&area=true&hide_border=false&bg_color=141414`
+    }
+  ];
+
+  cards.forEach((c, i) => {
+    const div = document.createElement('div');
+    div.className = 'github-card reveal';
+    div.dataset.delay = i + 1;
+    div.innerHTML = `
+      <img src="${c.src}" alt="${c.label}" loading="lazy"
+           onerror="this.parentElement.style.display='none'">
+      <p class="github-card-label">${c.label}</p>
+    `;
+    grid.appendChild(div);
+  });
+
+  // Snake
+  const snakeWrap = document.createElement('div');
+  snakeWrap.style.cssText = 'grid-column:1/-1; background:var(--bg-card); border:1px solid var(--border); border-radius:4px; overflow:hidden;';
+  snakeWrap.innerHTML = `
+    <img src="https://raw.githubusercontent.com/${u}/${u}/output/github-contribution-grid-snake-dark.svg"
+         alt="Contribution Snake" style="width:100%; display:block;"
+         onerror="this.parentElement.style.display='none'">
+    <p class="github-card-label">Contribution Snake</p>
+  `;
+  grid.appendChild(snakeWrap);
+})();
+
+// ── Contact section info ─────────────────────────────────────
+(function () {
+  const emailEl  = document.getElementById('contact-email');
+  const ghUserEl = document.getElementById('contact-github-user');
+  if (emailEl)  emailEl.textContent  = DATA.email || '';
+  if (ghUserEl) ghUserEl.textContent = 'github.com/' + (DATA.githubUsername || '');
+})();
+
+// ── Footer ───────────────────────────────────────────────────
+(function () {
+  const nameEl    = document.getElementById('footer-name');
+  const titleEl   = document.getElementById('footer-title');
+  const socialsEl = document.getElementById('footer-socials');
+  const copyEl    = document.getElementById('footer-copy');
+
+  if (nameEl)  nameEl.textContent  = DATA.name  || 'Eswara Sai';
+  if (titleEl) titleEl.textContent = DATA.title || 'AI Application Architect';
+
+  if (socialsEl) {
+    const socials = [
+      { icon: 'fab fa-linkedin-in',  href: DATA.linkedin  || '#', label: 'LinkedIn' },
+      { icon: 'fab fa-instagram',    href: DATA.instagram || '#', label: 'Instagram' },
+      { icon: 'fab fa-github',       href: DATA.github    || '#', label: 'GitHub' },
+      { icon: 'fas fa-envelope',     href: 'mailto:' + (DATA.email || ''), label: 'Email' }
+    ];
+    socials.forEach(s => {
+      const a = document.createElement('a');
+      a.className = 'footer-social';
+      a.href  = s.href;
+      a.title = s.label;
+      a.target = '_blank';
+      a.innerHTML = `<i class="${s.icon}"></i>`;
+      socialsEl.appendChild(a);
+    });
+  }
+
+  if (copyEl) {
+    copyEl.textContent = `© ${new Date().getFullYear()} ${DATA.name || 'Eswara Sai'} · Crafted with precision`;
+  }
+})();
+</script>
+<script src="script.js"></script>
+</body>
+</html>
