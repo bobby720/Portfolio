@@ -94,25 +94,25 @@ const DATA = {
        title: "Fundamentals of Java Programming",
        issuer: "Board Infinity",
        date: "2025",
-       image: "Screenshot 2025-10-24 210219.png"
+       image: "components/Screenshot 2025-10-24 210219.png"
      },
       {
        title: "ATF 2025: Stage 2 Candidate",
        issuer: "AlgoUniversity",
        date: "2025",
-       image: "ALGO university certificate.jpg"
+       image: "components/ALGO university certificate.jpg "
      },
      {
        title: "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
        issuer: "oracle",
        date: "2025",
-       image: "oracle.jpg"
+       image: "components/oracle.jpg"
      },
      {
        title: "Build website with AI",
        issuer: "Simplilearn",
        date: "2025",
-       image: "simplilearn.jpg"
+       image: "components/simplilearn.jpg"
      }
   ],
 
@@ -132,3 +132,4 @@ const DATA = {
     // { src: "assets/gallery/photo1.jpg", caption: "Workspace" }
   ]
 };
+

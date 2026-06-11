@@ -1,0 +1,135 @@
+// ============================================================
+//  data.js  –  Edit this file to update all portfolio content
+// ============================================================
+
+const DATA = {
+
+  // ── Personal Info ──────────────────────────────────────────
+  name: "Eswara Sai",
+  title: "AI Application Architect",
+  tagline: "Building intelligent products that solve real-world problems using software and artificial intelligence.",
+  githubUsername: "bobby720",
+  email: "eswarsaimarre@gmail.com",
+  linkedin: "https://www.linkedin.com/in/eswara-sai-marre-7b7047352/",
+  instagram: "https://www.instagram.com/btw_bobby07/",
+  github: "https://github.com/bobby720",
+  profileImage: "Gemini_Generated_Image_z4y12oz4y12oz4y1.png",
+
+  // ── Timeline ───────────────────────────────────────────────
+  timeline: [
+    {
+      year: "2024",
+      title: "Spark of Curiosity",
+      description: "Discovered the world of programming and fell in love with building things from scratch.",
+      icon: "✦"
+    },
+    {
+      year: "2025",
+      title: "Full Stack Journey Begins",
+      description: "Dived deep into Java, Spring Boot, and modern web development principles.",
+      icon: "⬡"
+    },
+    {
+      year: "2026",
+      title: "AI & React Mastery",
+      description: "Exploring React ecosystems, AI integrations, and scalable system design patterns.",
+      icon: "◈"
+    },
+    {
+      year: "Future",
+      title: "AI Application Architect",
+      description: "Leading the design and deployment of enterprise-grade intelligent applications.",
+      icon: "◇"
+    }
+  ],
+
+  // ── Skills ─────────────────────────────────────────────────
+  skills: {
+    Frontend:  ["HTML", "CSS", "JavaScript", "React"],
+    Backend:   ["Java", "Python"],
+    Database:  ["MySQL"],
+    Tools:     ["Git", "GitHub", "VS Code", "IntelliJ IDEA"]
+  },
+
+  // ── Projects ───────────────────────────────────────────────
+  projects: [
+    {
+      title: "ShareNStore",
+      description: "A collaborative cloud storage platform enabling seamless file sharing with granular permission controls and real-time sync.",
+      image: "Gemini_Generated_Image_z4y12oz4y12oz4y1.png",
+      tech: ["JavaScript", "TypeScript", "MySQL", "React" ,"ChatGPT","GeminiAI"],
+      github: "https://github.com/bobby720/sharenstore",
+      live: "#"
+    },
+    {
+      title: "Nano Gallery",
+      description: "A lightweight, blazing-fast image gallery with masonry layout, lazy loading, and touch-optimised lightbox preview.",
+      image: "Gemini_Generated_Image_.png",
+      tech: ["HTML", "CSS", "JavaScript"],
+      github: "https://github.com/bobby720/nano-gallery",
+      live: "#"
+    },
+    {
+      title: "Digi Library",
+      description: "A digital library management system featuring smart search, cataloguing, borrowing workflows, and admin dashboards.",
+      image: "Gemini_Generated_Image_z4y12oz4y12oz4y1.png",
+      tech: ["React","Tailwind CSS", "Node.js", "MySQL","ChatGPT","GeminiAI","AntigravityAI"],
+      github: "https://github.com/bobby720/Digi_Library",
+      live: "#"
+    },
+    {
+      title: "Portfolio Website",
+      description: "A responsive portfolio website showcasing my work and skills as a developer.",
+      image: "#",
+      tech: ["HTML", "CSS", "JavaScript"],
+      github: "https://github.com/bobby720/portfolio",
+      live: "#"
+    }
+  ],
+
+  // ── Certificates ───────────────────────────────────────────
+  certificates: [
+    // Add certificates here – they render automatically
+     {
+       title: "Fundamentals of Java Programming",
+       issuer: "Board Infinity",
+       date: "2025",
+       image: "D:\DEV\PROJECTS\PERSONAL\New folder (2)\components\ALGO university certificate.jpg"
+     },
+      {
+       title: "ATF 2025: Stage 2 Candidate",
+       issuer: "AlgoUniversity",
+       date: "2025",
+       image: "D:\DEV\PROJECTS\PERSONAL\New folder (2)\components\ALGO university certificate.jpg"
+     },
+     {
+       title: "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
+       issuer: "oracle",
+       date: "2025",
+       image: "D:\DEV\PROJECTS\PERSONAL\New folder (2)\ components\oracle.jpg"
+     },
+     {
+       title: "Build website with AI",
+       issuer: "Simplilearn",
+       date: "2025",
+       image: "D:\DEV\PROJECTS\PERSONAL\New folder (2)\components\simplilearn.jpg"
+     }
+  ],
+
+  // ── Achievements ───────────────────────────────────────────
+  achievements: [
+    // Add achievements here – they render automatically
+    // {
+    //   title: "Hackathon Winner",
+    //   description: "1st place at National AI Hackathon 2025",
+    //   image: "assets/achievements/hackathon.jpg"
+    // }
+  ],
+
+  // ── Gallery ────────────────────────────────────────────────
+  gallery: [
+    // Add gallery images here – they render automatically
+    // { src: "assets/gallery/photo1.jpg", caption: "Workspace" }
+  ]
+};
+
