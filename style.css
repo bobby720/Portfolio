@@ -518,6 +518,31 @@ section {
   font-size: 2rem; margin-bottom: .8rem;
   display: block; transition: transform .4s var(--ease-spring);
 }
+.skill-icon .llm-icon {
+  width: 2.45rem;
+  height: 2.45rem;
+  display: inline-block;
+  overflow: visible;
+  filter: drop-shadow(0 7px 10px rgba(0,0,0,.35)) drop-shadow(0 0 12px rgba(212,175,55,.14));
+}
+.llm-badge {
+  fill: #171717;
+  stroke: rgba(212,175,55,.24);
+  stroke-width: 1;
+}
+.llm-mark {
+  fill: #fff;
+}
+.llm-stroke {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.llm-icon-chatgpt .llm-stroke { stroke-width: 3.7; }
+.llm-icon-claude .llm-stroke { stroke-width: 4.2; }
+.llm-icon-antigravity .llm-stroke { stroke-width: 4; }
 .skill-card:hover .skill-icon { transform: scale(1.15); }
 .skill-name {
   font-family: var(--font-ui); font-size: .82rem;
@@ -873,4 +898,70 @@ footer {
   .github-grid { grid-template-columns: 1fr; }
   .masonry-grid { columns: 1; }
   .projects-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Project Language / AI Percentage Bars ─────────────────── */
+.pbar-panel {
+  margin: 1rem 0 .6rem;
+}
+.pbar-label {
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--text-sec);
+  margin-bottom: .55rem;
+}
+.pbar-track {
+  display: flex;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(255,255,255,.05);
+  gap: 1.5px;
+}
+.pbar-seg {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1s cubic-bezier(0.25,0.46,0.45,0.94);
+  position: relative;
+}
+.pbar-seg:hover {
+  filter: brightness(1.25);
+}
+/* Tooltip on hover via title – browsers handle natively */
+
+.pbar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .9rem;
+  margin-top: .6rem;
+}
+.pbar-dot-wrap {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  color: var(--text-sec);
+}
+.pbar-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.pbar-dot-name {
+  color: var(--text);
+}
+.pbar-dot-pct {
+  color: var(--text-sec);
+  opacity: .7;
+}
+
+/* Divider line between the two panels */
+.pbar-panel + .pbar-panel {
+  border-top: 1px solid var(--border);
+  padding-top: .9rem;
 }

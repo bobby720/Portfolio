@@ -238,13 +238,18 @@ const SKILL_ICONS = {
   'Git':'<i class="fab fa-git-alt"></i>',
   'GitHub':'<i class="fab fa-github"></i>',
   'VS Code':'<i class="fas fa-code"></i>',
-  'IntelliJ IDEA':'<i class="fas fa-infinity"></i>'
+  'IntelliJ IDEA':'<i class="fas fa-infinity"></i>',
+  'ChatGPT (Model GPT-5.5)':'<svg class="llm-icon llm-icon-chatgpt" viewBox="0 0 64 64" aria-hidden="true"><circle class="llm-badge" cx="32" cy="32" r="27"/><g class="llm-mark llm-stroke"><path d="M19 22h26c4.4 0 8 3.4 8 7.6s-3.6 7.6-8 7.6H33L21 47v-9.8h-2c-4.4 0-8-3.4-8-7.6S14.6 22 19 22Z"/><path d="M23 29h18"/><path d="M23 35h10"/><circle cx="45" cy="18" r="4"/><circle cx="17" cy="48" r="3.5"/><path d="M42 20.5 34 25"/><path d="M20 46 27 38"/></g></svg>',
+  'Gemini (Model 3.1 Flash)':'<svg class="llm-icon llm-icon-gemini" viewBox="0 0 64 64" aria-hidden="true"><path class="llm-badge" d="M32 4 56 18v28L32 60 8 46V18L32 4Z"/><g class="llm-mark"><path d="M30 14c2.4 10.7 8.8 17.1 19.5 19.5C38.8 35.9 32.4 42.3 30 53c-2.4-10.7-8.8-17.1-19.5-19.5C21.2 31.1 27.6 24.7 30 14Z"/><path d="M48 39c1.1 4.8 3.9 7.6 8.5 8.5-4.6.9-7.4 3.7-8.5 8.5-1.1-4.8-3.9-7.6-8.5-8.5 4.6-.9 7.4-3.7 8.5-8.5Z"/></g></svg>',
+  'Claude (Model Haiku 4.5, Sonnet 4.6)':'<svg class="llm-icon llm-icon-claude" viewBox="0 0 64 64" aria-hidden="true"><rect class="llm-badge" x="7" y="7" width="50" height="50" rx="8"/><g class="llm-mark llm-stroke"><path d="M32 14v8"/><path d="M32 42v8"/><path d="M14 32h8"/><path d="M42 32h8"/><path d="M19.3 19.3 25 25"/><path d="M39 39l5.7 5.7"/><path d="M44.7 19.3 39 25"/><path d="M25 39l-5.7 5.7"/><path d="M20 32c3.5-7 7.5-10.5 12-10.5S40.5 25 44 32c-3.5 7-7.5 10.5-12 10.5S23.5 39 20 32Z"/><circle cx="32" cy="32" r="5"/></g></svg>',
+  'AntigravityAI':'<svg class="llm-icon llm-icon-antigravity" viewBox="0 0 64 64" aria-hidden="true"><path class="llm-badge" d="M32 4 55.4 17.5v29L32 60 8.6 46.5v-29L32 4Z"/><g class="llm-mark llm-stroke"><path d="M16 48h32"/><path d="M24 44 34 14l10 30"/><path d="M28 34h12"/><path d="M19 38c8-8 18-12 30-12"/><path d="M42 19h9v9"/><path d="M43 19 31 31"/></g></svg>'
 };
 const SKILL_LEVELS = {
   'HTML':100,'CSS':100,'JavaScript':100,'React':100,
   'Java':100,'Spring Boot':100,'Python':100,
   'MySQL':100,
-  'Git':100,'GitHub':100,'VS Code':100,'IntelliJ IDEA':100
+  'Git':100,'GitHub':100,'VS Code':100,'IntelliJ IDEA':100,
+  'ChatGPT (Model GPT-5.5)':100,'Gemini (Model 3.1 Flash)':100,'Claude (Model Haiku 4.5, Sonnet 4.6)':100,'AntigravityAI':100  
 };
 
 
@@ -254,12 +259,41 @@ const SKILL_LEVELS = {
   const grid = document.getElementById('projects-grid');
   if (!grid || !DATA.projects) return;
 
+  /* Build the stacked-bar + legend for languages or AI tools */
+  function buildBarPanel(items, label) {
+    if (!items || !items.length) return '';
+
+    // Normalise to 100%
+    const total = items.reduce((s, x) => s + (x.pct || 0), 0);
+    const norm  = total > 0 ? 100 / total : 1;
+
+    const segments = items.map(x =>
+      `<div class="pbar-seg" style="width:${(x.pct * norm).toFixed(2)}%;background:${x.color||'#D4AF37'};"
+            title="${x.name} ${x.pct}%"></div>`
+    ).join('');
+
+    const dots = items.map(x =>
+      `<span class="pbar-dot-wrap">
+         <span class="pbar-dot" style="background:${x.color||'#D4AF37'};"></span>
+         <span class="pbar-dot-name">${x.name}</span>
+         <span class="pbar-dot-pct">${x.pct}%</span>
+       </span>`
+    ).join('');
+
+    return `
+      <div class="pbar-panel">
+        <p class="pbar-label">${label}</p>
+        <div class="pbar-track">${segments}</div>
+        <div class="pbar-legend">${dots}</div>
+      </div>`;
+  }
+
   DATA.projects.forEach((p, i) => {
     const card = document.createElement('div');
     card.className = 'project-card reveal';
     card.dataset.delay = (i % 3) + 1;
 
-    const imgHtml = p.image
+    const imgHtml = p.image && p.image !== '#'
       ? `<img class="project-img" src="${p.image}" alt="${p.title}"
              onerror="this.outerHTML='<div class=\\'project-img-placeholder\\'>${p.title}</div>'">`
       : `<div class="project-img-placeholder">${p.title}</div>`;
@@ -272,17 +306,40 @@ const SKILL_LEVELS = {
       ? `<a href="${p.live}" class="btn btn-gold btn-sm" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>`
       : '';
 
+    const langBar = buildBarPanel(p.languages, 'Languages');
+    const aiBar   = buildBarPanel(p.LLM,        'LLM Usage');
+
     card.innerHTML = `
       ${imgHtml}
       <div class="project-body">
         <h3 class="project-title">${p.title}</h3>
         <p class="project-desc">${p.description}</p>
         <div class="project-tech">${techTags}</div>
+        ${langBar}
+        ${aiBar}
         <div class="project-links">${ghBtn}${liveBtn}</div>
       </div>
     `;
     grid.appendChild(card);
   });
+
+  /* Animate bars when card enters viewport */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.pbar-seg').forEach(seg => {
+          const target = seg.style.width;
+          seg.style.width = '0%';
+          requestAnimationFrame(() => {
+            seg.style.transition = 'width 1s cubic-bezier(0.25,0.46,0.45,0.94)';
+            seg.style.width = target;
+          });
+        });
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.25 });
+  document.querySelectorAll('.project-card').forEach(c => io.observe(c));
 })();
 
 // ── Timeline ─────────────────────────────────────────────────
