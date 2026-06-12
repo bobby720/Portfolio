@@ -18,7 +18,7 @@ const DATA = {
   // ── Timeline ───────────────────────────────────────────────
   timeline: [
     { year: "2024", title: "Spark of Curiosity",         description: "Discovered the world of programming and fell in love with building things from scratch.", icon: "✦" },
-    { year: "2025", title: "Full Stack Journey Begins",   description: "Dived deep into Java, Spring Boot, and modern web development principles.",             icon: "⬡" },
+    { year: "2025", title: "Full Stack Java Journey Begins",   description: "Dived deep into Java, Spring Boot, and modern web development principles.",             icon: "⬡" },
     { year: "2026", title: "AI & React Mastery",          description: "Exploring React ecosystems, AI integrations, and scalable system design patterns.",       icon: "◈" },
     { year: "Future", title: "AI Application Architect", description: "Leading the design and deployment of enterprise-grade intelligent applications.",           icon: "◇" }
   ],
