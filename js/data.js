@@ -25,7 +25,7 @@ const DATA = {
 
   // ── Skills ─────────────────────────────────────────────────
   skills: {
-    Frontend:  ["HTML", "CSS", "JavaScript", "React"],
+    Frontend:  ["HTML", "CSS", "JavaScript"],
     Backend:   ["Java", "Python"],
     Database:  ["MySQL"],
     Tools:     ["Git", "GitHub", "VS Code", "IntelliJ IDEA"],

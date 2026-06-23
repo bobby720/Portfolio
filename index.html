@@ -409,7 +409,7 @@ const SKILL_LEVELS = {
       const card = document.createElement('div');
       card.className = 'dynamic-card reveal';
       card.innerHTML = `
-        ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ''}
+        ${item.image ? `<img src="${item.image}" alt="${item.title}" class="cert-img">` : ''}
         <div class="dynamic-card-body">
           <h4>${item.title}</h4>
           ${item.description ? `<p>${item.description}</p>` : ''}
@@ -418,6 +418,20 @@ const SKILL_LEVELS = {
         </div>
       `;
       grid.appendChild(card);
+      
+      // Add lightbox click handler for certificate images
+      if (item.image) {
+        const img = card.querySelector('.cert-img');
+        img.addEventListener('click', () => {
+          const lightbox = document.getElementById('lightbox');
+          const lightboxImg = document.getElementById('lightbox-img');
+          if (lightbox && lightboxImg) {
+            lightboxImg.src = item.image;
+            lightboxImg.alt = item.title;
+            lightbox.classList.add('open');
+          }
+        });
+      }
     });
     c.appendChild(grid);
   }
