@@ -41,6 +41,7 @@ const DATA = {
   projects: [
     {
       title: "ShareNStore",
+      category: "Self-Initiated Projects",
       description: "A collaborative cloud storage platform enabling seamless file sharing with granular permission controls and real-time sync.",
       image: "Gemini_Generated_Image_z4y12oz4y12oz4y1.png",
       tech: ["JavaScript", "TypeScript", "MySQL", "React","ChatGPT (Model GPT-5.5)", "Gemini (Model 3.1 Flash)"],
@@ -59,6 +60,7 @@ const DATA = {
     },
     {
       title: "Nano Gallery",
+      category: "Self-Initiated Projects",
       description: "A lightweight, blazing-fast image gallery with masonry layout, lazy loading, and touch-optimised lightbox preview.",
       image: "Gemini_Generated_Image_.png",
       tech: ["HTML", "CSS", "JavaScript", "ChatGPT (Model GPT-5.5)", "Gemini (Model NanoBanana)"],
@@ -76,6 +78,7 @@ const DATA = {
     },
     {
       title: "Digi Library",
+      category: "Hackathon Innovations",
       description: "A digital library management system featuring smart search, cataloguing, borrowing workflows, and admin dashboards.",
       image: "Gemini_Generated_Image_z4y12oz4y12oz4y1.png",
       tech: ["React", "Tailwind CSS", "Node.js", "MySQL", "ChatGPT (Model GPT-5.5)", "Gemini (Model 3.1 Flash)", "AntigravityAI"],
@@ -95,6 +98,7 @@ const DATA = {
     },
     {
       title: "Portfolio Website",
+      category: "Self-Initiated Projects",
       description: "A responsive portfolio website showcasing my work and skills as a developer.",
       image: "#",
       tech: ["HTML", "CSS", "JavaScript","Claude (Model Opus 4.6, Sonnet 4.6)"],

@@ -288,39 +288,68 @@ const SKILL_LEVELS = {
       </div>`;
   }
 
-  DATA.projects.forEach((p, i) => {
-    const card = document.createElement('div');
-    card.className = 'project-card reveal';
-    card.dataset.delay = (i % 3) + 1;
+  // Group projects by category
+  const groupedByCategory = {};
+  const categoryOrder = ["Self-Initiated Projects", "Academic projects", "Hackathon Innovations"];
+  
+  DATA.projects.forEach(p => {
+    const cat = p.category || "Other";
+    if (!groupedByCategory[cat]) {
+      groupedByCategory[cat] = [];
+    }
+    groupedByCategory[cat].push(p);
+  });
 
-    const imgHtml = p.image && p.image !== '#'
-      ? `<img class="project-img" src="${p.image}" alt="${p.title}"
-             onerror="this.outerHTML='<div class=\\'project-img-placeholder\\'>${p.title}</div>'">`
-      : `<div class="project-img-placeholder">${p.title}</div>`;
+  // Render categories and projects in order
+  categoryOrder.forEach(category => {
+    if (!groupedByCategory[category] || groupedByCategory[category].length === 0) return;
 
-    const techTags = (p.tech || []).map(t => `<span class="tech-tag">${t}</span>`).join('');
-    const ghBtn    = p.github
-      ? `<a href="${p.github}" class="btn btn-outline btn-sm" target="_blank"><i class="fab fa-github"></i> GitHub</a>`
-      : '';
-    const liveBtn  = p.live && p.live !== '#'
-      ? `<a href="${p.live}" class="btn btn-gold btn-sm" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>`
-      : '';
+    // Create category title
+    const categoryTitle = document.createElement('div');
+    categoryTitle.className = 'project-category-title reveal';
+    categoryTitle.innerHTML = `<h3>${category}</h3>`;
+    grid.appendChild(categoryTitle);
 
-    const langBar = buildBarPanel(p.languages, 'Languages');
-    const aiBar   = buildBarPanel(p.LLM,        'LLM Usage');
+    // Create container for projects in this category
+    const categoryContainer = document.createElement('div');
+    categoryContainer.className = 'project-category-container';
+    
+    groupedByCategory[category].forEach((p, i) => {
+      const card = document.createElement('div');
+      card.className = 'project-card reveal';
+      card.dataset.delay = (i % 3) + 1;
 
-    card.innerHTML = `
-      ${imgHtml}
-      <div class="project-body">
-        <h3 class="project-title">${p.title}</h3>
-        <p class="project-desc">${p.description}</p>
-        <div class="project-tech">${techTags}</div>
-        ${langBar}
-        ${aiBar}
-        <div class="project-links">${ghBtn}${liveBtn}</div>
-      </div>
-    `;
-    grid.appendChild(card);
+      const imgHtml = p.image && p.image !== '#'
+        ? `<img class="project-img" src="${p.image}" alt="${p.title}"
+               onerror="this.outerHTML='<div class=\\'project-img-placeholder\\'>${p.title}</div>'">`
+        : `<div class="project-img-placeholder">${p.title}</div>`;
+
+      const techTags = (p.tech || []).map(t => `<span class="tech-tag">${t}</span>`).join('');
+      const ghBtn    = p.github
+        ? `<a href="${p.github}" class="btn btn-outline btn-sm" target="_blank"><i class="fab fa-github"></i> GitHub</a>`
+        : '';
+      const liveBtn  = p.live && p.live !== '#'
+        ? `<a href="${p.live}" class="btn btn-gold btn-sm" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>`
+        : '';
+
+      const langBar = buildBarPanel(p.languages, 'Languages');
+      const aiBar   = buildBarPanel(p.LLM,        'LLM Usage');
+
+      card.innerHTML = `
+        ${imgHtml}
+        <div class="project-body">
+          <h3 class="project-title">${p.title}</h3>
+          <p class="project-desc">${p.description}</p>
+          <div class="project-tech">${techTags}</div>
+          ${langBar}
+          ${aiBar}
+          <div class="project-links">${ghBtn}${liveBtn}</div>
+        </div>
+      `;
+      categoryContainer.appendChild(card);
+    });
+    
+    grid.appendChild(categoryContainer);
   });
 
   /* Animate bars when card enters viewport */
