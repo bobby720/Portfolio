@@ -118,10 +118,11 @@ const DATA = {
 
   // ── Certificates ───────────────────────────────────────────
   certificates: [
-    { title: "Fundamentals of Java Programming",                            issuer: "Board Infinity",   date: "2025", image: "components/Screenshot 2025-10-24 210219.png" },
-    { title: "ATF 2025: Stage 2 Candidate",                                 issuer: "AlgoUniversity",  date: "2025", image: "components/ALGO university certificate.jpg" },
+    { title: "Fundamentals of Java Programming", issuer: "Board Infinity",   date: "2025", image: "components/Screenshot 2025-10-24 210219.png" },
+    { title: "ATF 2025: Stage 2 Candidate",  issuer: "AlgoUniversity",  date: "2025", image: "components/ALGO university certificate.jpg" },
     { title: "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional", issuer: "Oracle", date: "2025", image: "components/oracle.jpg" },
-    { title: "Build website with AI",                                       issuer: "Simplilearn",     date: "2025", image: "components/simplilearn.jpg" }
+    { title: "Build website with AI",   issuer: "Simplilearn",     date: "2025", image: "components/simplilearn.jpg" },
+    { title: "Quizoff 2026 by CampusCrew",   issuer: "CampusCrew",        date: "2026", image: "components/Quizoff 2026 by CampusCrew.jpg" }
   ],
 
   // ── Achievements ───────────────────────────────────────────
