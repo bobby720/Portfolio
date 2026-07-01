@@ -722,14 +722,37 @@ section {
 }
 
 /* ── Certificates / Achievements ──────────────────────────── */
-.dynamic-grid {
+.section-subpanel {
+  margin-top: 2.5rem;
+}
+.subpanel-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin-bottom: 1.4rem;
+  letter-spacing: .02em;
+}
+#certs-container .dynamic-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+#certs-container .dynamic-card {
+  min-width: 240px;
+  max-width: 260px;
+  flex: 0 0 auto;
+}
+#achievements-container .dynamic-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem; margin-top: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 .dynamic-card {
   background: var(--bg-card);
-  border: 1px solid var(--border); border-radius: 4px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
   overflow: hidden;
   transition: all .4s var(--ease-luxury);
 }
@@ -738,9 +761,9 @@ section {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0,0,0,.5);
 }
-.dynamic-card img { width: 100%; height: auto; max-height: 350px; object-fit: contain; background: var(--bg-primary); cursor: pointer; transition: transform .3s; }
+.dynamic-card img { width: 100%; height: auto; max-height: 300px; object-fit: contain; background: var(--bg-primary); cursor: pointer; transition: transform .3s; }
 .dynamic-card img:hover { transform: scale(1.02); }
-.dynamic-card-body { padding: 1.4rem; }
+.dynamic-card-body { padding: 1.2rem; }
 .dynamic-card-body h4 { font-size: 1rem; margin-bottom: .3rem; }
 .dynamic-card-body p { font-size: .82rem; color: var(--text-sec); }
 .dynamic-card-meta {
