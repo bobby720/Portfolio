@@ -127,7 +127,8 @@ const DATA = {
   achievements: [
     { title: "ATF 2025: Stage 2 Candidate",  issuer: "AlgoUniversity",  date: "2025", image: "components/ALGO university certificate.jpg" },
     { title: "Quizoff 2026 by CampusCrew",   issuer: "CampusCrew",        date: "2026", image: "components/Quizoff 2026 by CampusCrew.jpg" },
-    { title: "Gemini Music Night", issuer: "Google", date: "2026", image: "components/Gemini Music night.png" }
+    { title: "Gemini Music Night Edition", issuer: "Google", date: "2026", image: "components/Gemini Music night.png" },
+    { title: "Nexus Quiz Championship 2026", issuer: "Nexus", date: "2026", image: "components/Nexus Quiz.jpg" } 
   ],
 
   // ── Gallery ────────────────────────────────────────────────
