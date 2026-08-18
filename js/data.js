@@ -103,7 +103,7 @@ const DATA = {
       image: "#",
       tech: ["HTML", "CSS", "JavaScript","Claude (Model Opus 4.6, Sonnet 4.6)"],
       github: "https://github.com/bobby720/portfolio",
-      live: "eswarasaimarre.netlify.app",
+      live: "https://eswarasaimarre.netlify.app/",
       languages: [
         { name: "HTML",       pct: 45, color: "#E34F26" },
         { name: "CSS",        pct: 30, color: "#563D7C" },
