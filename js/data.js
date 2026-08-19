@@ -61,7 +61,7 @@ const DATA = {
     {
       title: "Nano Gallery",
       category: "Self-Initiated Projects",
-      description: "A lightweight, blazing-fast image gallery with masonry layout, lazy loading, and touch-optimised lightbox preview.",
+      description: "Nano Gallery is a web-based AI prompt discovery platform that provides users with a curated collection of reusable prompts for generative AI tools such as Gemini.",
       image: "Gemini_Generated_Image_.png",
       tech: ["HTML", "CSS", "JavaScript", "ChatGPT (Model GPT-5.5)", "Gemini (Model NanoBanana)"],
       github: "https://github.com/bobby720/nano-gallery",
