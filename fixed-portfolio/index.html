@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <meta name="description" content="Eswara Sai – AI Application Architect & Full Stack Developer"/>
   <title>Eswara Sai · AI Application Architect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Patrick+Hand&family=Kalam:wght@400;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
   <!--  Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -14,15 +17,6 @@
 <!-- ── Noise overlay ───────────────────────────────────────── -->
 <div id="noise"></div>
 
-<!-- ── Custom Cursor ───────────────────────────────────────── -->
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
-
-<!-- ── Mouse Light ─────────────────────────────────────────── -->
-<div id="mouse-light"></div>
-
-<!-- ── Particles ───────────────────────────────────────────── -->
-<canvas id="particles-canvas"></canvas>
 
 <!-- ── Lightbox ────────────────────────────────────────────── -->
 <div id="lightbox">
@@ -34,12 +28,11 @@
      LOADING SCREEN
 ═══════════════════════════════════════════════════════════ -->
 <div id="loader">
-  <canvas id="loader-canvas"></canvas>
   <div id="loader-content">
     <h1 id="loader-name">
       <!-- Letters injected by JS below -->
     </h1>
-    <p id="loader-title">ASPIRING AI APPLICATION ARCHITECT</p>
+    <p id="loader-title">loading my little corner of the internet…</p>
     <div id="loader-bar"><div id="loader-bar-fill"></div></div>
     <p id="loader-percent">0%</p>
   </div>
@@ -49,24 +42,17 @@
      NAVIGATION
 ═══════════════════════════════════════════════════════════ -->
 <nav id="navbar">
-  <span class="nav-logo">ES</span>
+  <a href="#hero" class="nav-logo">Eswara</a>
   <ul class="nav-links">
-    <li><a href="#hero">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#hero">Home</a></li><li><a href="about.html">About</a></li><li><a href="#projects">Projects</a></li>
+    <li><a href="about.html#skills">Skills</a></li><li><a href="about.html#timeline">Experience</a></li><li><a href="#certificates">Certificates</a></li>
+    <li><a href="#achievements">Achievements</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
-
-<!-- Mobile Menu -->
 <div id="mobile-menu">
-  <a href="#hero">Home</a>
-  <a href="about.html">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
+  <a href="#hero">Home</a><a href="about.html">About</a><a href="#projects">Projects</a><a href="about.html#skills">Skills</a>
+  <a href="about.html#timeline">Experience</a><a href="#certificates">Certificates</a><a href="#achievements">Achievements</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -75,7 +61,7 @@
 <section id="hero">
   <!-- Left -->
   <div class="hero-text">
-    <p class="hero-eyebrow">✦</p>
+    <p class="hero-eyebrow">Hi,</p>
     <h1 class="hero-name">
       ESWARA<br>
       <em>SAI</em>
@@ -95,7 +81,7 @@
     <img
       id="hero-profile-img"
       class="hero-profile"
-      src="#"
+      src="assets/images/event-workshop.jpg"
       alt="Eswara Sai"
       onerror="this.style.display='none'; document.getElementById('hero-profile-placeholder').style.display='flex';"
     />
@@ -106,6 +92,21 @@
       <span>profile photo</span>
     </div>
   </div>
+
+
+  <!-- Hand-drawn annotations & doodles -->
+  <span class="doodle doodle-star" aria-hidden="true">
+    <svg viewBox="0 0 40 40" width="44"><path d="M20 3v34M3 20h34M7 7l26 26M33 7 7 33"/></svg>
+  </span>
+  <span class="doodle doodle-squiggle" aria-hidden="true">
+    <svg viewBox="0 0 80 30" width="70"><path d="M2 22c8-24 14 20 22-2s14 18 22-4 12 12 16 6"/></svg>
+  </span>
+  <span class="doodle doodle-arrow" aria-hidden="true">
+    <svg viewBox="0 0 100 60" width="86"><path d="M4 6c26 4 48 20 66 42"/><path d="M52 50l18 2-4-18"/></svg>
+  </span>
+  <span class="hero-note tape note-a" aria-hidden="true">Good ideas build better futures!</span>
+  <span class="hero-note tape blue note-b" aria-hidden="true">BUILD · LEARN · GROW · REPEAT</span>
+  <span class="hero-note tape green note-c" aria-hidden="true">ideas → code ☕</span>
 
   <!-- Scroll hint -->
   <div class="scroll-hint">
@@ -120,7 +121,7 @@
      PROJECTS
 ═══════════════════════════════════════════════════════════ -->
 <section id="projects">
-  <p class="section-label reveal">Work</p>
+  <p class="section-label reveal">01 — things I built</p>
   <h2 class="section-title reveal" data-delay="1"><em>Projects</em></h2>
   <div class="projects-grid" id="projects-grid"></div>
 </section>
@@ -131,7 +132,7 @@
      CERTIFICATES & ACHIEVEMENTS
 ═══════════════════════════════════════════════════════════════════ -->
 <section id="certificates" style="background:var(--bg-secondary)">
-  <p class="section-label reveal">Credentials</p>
+  <p class="section-label reveal">02 — proof &amp; little wins</p>
   <h2 class="section-title reveal" data-delay="1">Certificates &amp;<br><em>Achievements</em></h2>
   <div class="section-subpanel reveal" data-delay="2">
     <h3 class="subpanel-title">Certificates</h3>
@@ -139,6 +140,7 @@
   </div>
   <div class="section-subpanel reveal" data-delay="3">
     <h3 class="subpanel-title">Achievements</h3>
+    <div id="achievements" class="anchor-target"></div>
     <div id="achievements-container"></div>
   </div>
 </section>
@@ -147,25 +149,16 @@
      GALLERY
 ═══════════════════════════════════════════════════════════ -->
 <section id="gallery">
-  <p class="section-label reveal">Gallery</p>
+  <p class="section-label reveal">03 — visual journal</p>
   <h2 class="section-title reveal" data-delay="1">Visual<br><em>Journal</em></h2>
   <div class="masonry-grid" id="gallery-grid"></div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     GITHUB
-═══════════════════════════════════════════════════════════ -->
-<section id="github">
-  <p class="section-label reveal">Open Source</p>
-  <h2 class="section-title reveal" data-delay="1">GitHub<br><em>Activity</em></h2>
-  <div class="github-grid" id="github-grid"></div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
      CONTACT
 ═══════════════════════════════════════════════════════════ -->
 <section id="contact" style="background:var(--bg-secondary)">
-  <p class="section-label reveal">Connect</p>
+  <p class="section-label reveal">05 — say hello</p>
   <h2 class="section-title reveal" data-delay="1">Let's Build<br><em>Together</em></h2>
 
   <div class="contact-grid">
@@ -196,7 +189,7 @@
         <textarea placeholder="Tell me about your project…" required></textarea>
       </div>
       <button type="submit" class="btn btn-gold">Send Message</button>
-      <p class="form-note" id="form-note">✦ Message received — I'll be in touch shortly.</p>
+      <p class="form-note" id="form-note">Got it! ✦ I'll write back soon.</p>
     </form>
   </div>
 </section>
@@ -245,10 +238,10 @@ const SKILL_ICONS = {
   'GitHub':'<i class="fab fa-github"></i>',
   'VS Code':'<i class="fas fa-code"></i>',
   'IntelliJ IDEA':'<i class="fas fa-infinity"></i>',
-  'ChatGPT (Model GPT-5.5)':'<svg class="llm-icon llm-icon-chatgpt" viewBox="0 0 64 64" aria-hidden="true"><circle class="llm-badge" cx="32" cy="32" r="27"/><g class="llm-mark llm-stroke"><path d="M32 16c5.2-5.8 15.1-2.3 15.1 5.7 0 1.3-.3 2.5-.8 3.6"/><path d="M46.3 25.3c7.6 1.6 9.4 12 2.5 16-1.1.6-2.3 1-3.6 1.1"/><path d="M45.2 42.4c2.4 7.4-5.7 13.8-12.6 9.8-1.1-.6-2-1.5-2.8-2.5"/><path d="M29.8 49.7c-5.2 5.8-15.1 2.3-15.1-5.7 0-1.3.3-2.5.8-3.6"/><path d="M15.5 40.4c-7.6-1.6-9.4-12-2.5-16 1.1-.6 2.3-1 3.6-1.1"/><path d="M16.6 23.3c-2.4-7.4 5.7-13.8 12.6-9.8 1.1.6 2 1.5 2.8 2.5"/><path d="M23.4 28.1 32 23l8.6 5.1v9.8L32 43l-8.6-5.1v-9.8Z"/><path d="M32 23v20"/><path d="M23.4 28.1 40.6 38"/><path d="M40.6 28.1 23.4 38"/></g></svg>',
-  'Gemini (Model 3.1 Flash)':'<svg class="llm-icon llm-icon-gemini" viewBox="0 0 64 64" aria-hidden="true"><path class="llm-badge" d="M32 4 56 18v28L32 60 8 46V18L32 4Z"/><g class="llm-mark"><path d="M30 14c2.4 10.7 8.8 17.1 19.5 19.5C38.8 35.9 32.4 42.3 30 53c-2.4-10.7-8.8-17.1-19.5-19.5C21.2 31.1 27.6 24.7 30 14Z"/><path d="M48 39c1.1 4.8 3.9 7.6 8.5 8.5-4.6.9-7.4 3.7-8.5 8.5-1.1-4.8-3.9-7.6-8.5-8.5 4.6-.9 7.4-3.7 8.5-8.5Z"/></g></svg>',
-  'Claude (Model Haiku 4.5, Sonnet 4.6)':'<svg class="llm-icon llm-icon-claude" viewBox="0 0 64 64" aria-hidden="true"><rect class="llm-badge" x="7" y="7" width="50" height="50" rx="8"/><g class="llm-mark llm-stroke"><path d="M32 14v8"/><path d="M32 42v8"/><path d="M14 32h8"/><path d="M42 32h8"/><path d="M19.3 19.3 25 25"/><path d="M39 39l5.7 5.7"/><path d="M44.7 19.3 39 25"/><path d="M25 39l-5.7 5.7"/><path d="M20 32c3.5-7 7.5-10.5 12-10.5S40.5 25 44 32c-3.5 7-7.5 10.5-12 10.5S23.5 39 20 32Z"/><circle cx="32" cy="32" r="5"/></g></svg>',
-  'AntigravityAI':'<svg class="llm-icon llm-icon-antigravity" viewBox="0 0 64 64" aria-hidden="true"><path class="llm-badge" d="M32 4 55.4 17.5v29L32 60 8.6 46.5v-29L32 4Z"/><g class="llm-mark llm-stroke"><path d="M18 46 32 14l14 32"/><path d="M24.5 34h15"/><path d="M14 41c6.6-7.2 16.8-11.6 27.8-11.6 3.2 0 6.2.4 9.2 1.2"/><path d="M48 23.5 53 30l-7.8 2"/><path d="M20 22c4.2-3.6 9.1-5.7 14.6-6.1"/><path d="M37 14.5 32 9l-5 5.5"/></g></svg>'
+  'ChatGPT (Model GPT-5.5)':'<svg class="llm-icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="12" fill="#FFFFFF" stroke="#171717" stroke-width="3"/><path d="M32 18c-7.6 0-13.7 6.1-13.7 13.7 0 7.6 6.1 13.7 13.7 13.7 2.7 0 5.2-.8 7.3-2.3l5.2 3.3-1.6-6.4c2.1-2.6 3.3-5.8 3.3-9.3 0-7.6-6.1-13.7-13.7-13.7Zm-8.2 15.3c0-4.1 3.3-7.4 7.4-7.4 4.1 0 7.4 3.3 7.4 7.4 0 4.1-3.3 7.4-7.4 7.4-4.1 0-7.4-3.3-7.4-7.4Z" fill="#171717"/><path d="M23.8 31.8h16.4" stroke="#171717" stroke-width="3" stroke-linecap="round"/><path d="M26.5 27.8h11.1" stroke="#171717" stroke-width="3" stroke-linecap="round"/><path d="M26.5 36.1h7.9" stroke="#171717" stroke-width="3" stroke-linecap="round"/></svg>',
+  'Gemini (Model 3.1 Flash)':'<svg class="llm-icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8 42 22l14 10-14 10L32 56 22 42 8 32l14-10L32 8Z" fill="#1B66FF"/><path d="M32 13.5 39.3 24l10.2 7.5-10.2 7.5L32 50.5 24.7 39.5 14.5 32l10.2-7.5L32 13.5Z" fill="#fff" opacity=".3"/><path d="M32 18l7.1 14 14 7.1-14 7.1L32 46l-7.1-14-14-7.1 14-7.1L32 18Z" fill="#fff" opacity=".9"/></svg>',
+  'Claude (Model Haiku 4.5, Sonnet 4.6)':'<svg class="llm-icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="9" y="9" width="46" height="46" rx="12" fill="#fff" stroke="#171717" stroke-width="3"/><path d="M32 16 21 48h7.6l2.9-7.6h9.6L41.3 48H49L38 16h-6Zm-1.9 20.6 2.6-6.6 2.6 6.6h-5.2Z" fill="#171717"/></svg>',
+  'AntigravityAI':'<svg class="llm-icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="9" y="9" width="46" height="46" rx="12" fill="#fff" stroke="#171717" stroke-width="3"/><circle cx="32" cy="32" r="14" fill="#171717" opacity=".12"/><path d="M32 18c-7.7 0-14 6.3-14 14s6.3 14 14 14 14-6.3 14-14-6.3-14-14-14Zm0-5c10.5 0 19 8.5 19 19S42.5 51 32 51 13 42.5 13 32 21.5 13 32 13Z" fill="#171717"/><path d="M20 46 32 18l12 28" fill="none" stroke="#171717" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 34h16" stroke="#171717" stroke-width="3" stroke-linecap="round"/></svg>'
 };
 const SKILL_LEVELS = {
   'HTML':100,'CSS':100,'JavaScript':100,
@@ -257,6 +250,9 @@ const SKILL_LEVELS = {
   'Git':100,'GitHub':100,'VS Code':100,'IntelliJ IDEA':100,
   'ChatGPT (Model GPT-5.5)':100,'Gemini (Model 3.1 Flash)':100,'Claude (Model Haiku 4.5, Sonnet 4.6)':100,'AntigravityAI':100  
 };
+
+const profileImage = document.getElementById('hero-profile-img');
+if (profileImage && DATA.profileImage) profileImage.src = DATA.profileImage;
 
 
 
@@ -443,9 +439,9 @@ const SKILL_LEVELS = {
   }
 
   renderDynamicSection('certs-container', DATA.certificates,
-    '✦ Certificates will appear here once added to data.js');
+    'Certificates will show up here once they land in data.js ✎');
   renderDynamicSection('achievements-container', DATA.achievements,
-    '✦ Achievements will appear here once added to data.js');
+    'Little wins will show up here once they land in data.js ✎');
 })();
 
 // ── Gallery ──────────────────────────────────────────────────
@@ -454,65 +450,18 @@ const SKILL_LEVELS = {
   if (!grid) return;
 
   if (!DATA.gallery || DATA.gallery.length === 0) {
-    grid.innerHTML = `<p class="section-empty">✦ Gallery images will appear here once added to data.js</p>`;
+    grid.innerHTML = `<p class="section-empty">Photos will show up here once they land in data.js ✎</p>`;
     return;
   }
 
   DATA.gallery.forEach(item => {
+    const image = typeof item === 'string' ? item : item.src;
+    const caption = typeof item === 'string' ? '' : item.caption || '';
     const div = document.createElement('div');
     div.className = 'masonry-item';
-    div.innerHTML = `<img src="${item.src}" alt="${item.caption || ''}">`;
+    div.innerHTML = `<img src="${image}" alt="${caption}">`;
     grid.appendChild(div);
   });
-})();
-
-// ── GitHub Section ───────────────────────────────────────────
-(function () {
-  const u    = DATA.githubUsername || 'bobby720';
-  const grid = document.getElementById('github-grid');
-  if (!grid) return;
-
-  const cards = [
-    {
-      label: 'GitHub Stats',
-      src: `https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=transparent&title_color=D4AF37&icon_color=D4AF37&text_color=B8B8B8&border_color=2a2a2a&hide_border=false`
-    },
-    {
-      label: 'GitHub Streak',
-      src: `https://streak-stats.demolab.com?user=${u}&theme=transparent&ring=D4AF37&fire=FFD700&currStreakLabel=D4AF37&sideNums=B8B8B8&dates=555&border=2a2a2a`
-    },
-    {
-      label: 'Top Languages',
-      src: `https://github-readme-stats.vercel.app/api/top-langs/?username=${u}&layout=compact&theme=transparent&title_color=D4AF37&text_color=B8B8B8&border_color=2a2a2a`
-    },
-    {
-      label: 'Contribution Graph',
-      src: `https://github-readme-activity-graph.vercel.app/graph?username=${u}&theme=react-dark&color=D4AF37&line=D4AF37&point=FFD700&area=true&hide_border=false&bg_color=141414`
-    }
-  ];
-
-  cards.forEach((c, i) => {
-    const div = document.createElement('div');
-    div.className = 'github-card reveal';
-    div.dataset.delay = i + 1;
-    div.innerHTML = `
-      <img src="${c.src}" alt="${c.label}" loading="lazy"
-           onerror="this.parentElement.style.display='none'">
-      <p class="github-card-label">${c.label}</p>
-    `;
-    grid.appendChild(div);
-  });
-
-  // Snake
-  const snakeWrap = document.createElement('div');
-  snakeWrap.style.cssText = 'grid-column:1/-1; background:var(--bg-card); border:1px solid var(--border); border-radius:4px; overflow:hidden;';
-  snakeWrap.innerHTML = `
-    <img src="https://raw.githubusercontent.com/${u}/${u}/output/github-contribution-grid-snake-dark.svg"
-         alt="Contribution Snake" style="width:100%; display:block;"
-         onerror="this.parentElement.style.display='none'">
-    <p class="github-card-label">Contribution Snake</p>
-  `;
-  grid.appendChild(snakeWrap);
 })();
 
 // ── Contact section info ─────────────────────────────────────
@@ -552,10 +501,10 @@ const SKILL_LEVELS = {
   }
 
   if (copyEl) {
-    copyEl.textContent = `© ${new Date().getFullYear()} ${DATA.name || 'Eswara Sai'} · Crafted with precision`;
+    copyEl.textContent = `© ${new Date().getFullYear()} ${DATA.name || 'Eswara Sai'} · made with ♥ and lots of coffee`;
   }
 })();
 </script>
-<script src="js/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
