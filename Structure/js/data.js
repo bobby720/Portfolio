@@ -83,7 +83,7 @@ const DATA = {
       image: "assets/images/aws-prompt-fundamentals.",
       tech: ["React", "Tailwind CSS", "Node.js", "MySQL", "ChatGPT (Model GPT-5.5)", "Gemini (Model 3.1 Flash)", "AntigravityAI"],
       github: "https://github.com/bobby720/Digi_Library",
-      live: "#",
+      live: "https://digi-library-chi.vercel.app",
       languages: [
         { name: "JavaScript", pct: 48, color: "#F7DF1E" },
         { name: "TypeScript", pct: 32, color: "#3178C6" },
@@ -112,6 +112,25 @@ const DATA = {
       LLM: [
         { name: "Claude Haiku 4.5",   pct: 30, color: "#CC785C" },
         { name: "Claude Sonnet 4.6", pct: 30, color: "#D4AF37" }
+      ]
+    },
+    {
+      title: "CleanWard-AI",
+      category: "Hackathon Innovations",
+      description: "An AI-powered rural and urban waste management system that uses computer vision to identify and sort waste materials, providing real-time feedback to users.",
+      image: "assets/images/cleanward-ai.",
+      tech: ["Python", "Flask", "JavaScript", "ChatGPT (Model GPT-5.5)", "Gemini (Model 3.1 Flash)"],
+      github: "https://github.com/bobby720/Cleanward-ai-DCODEP",
+      live: "https://cleanward.ai.studio/",
+      tech: ["TypeScript", "Node.js", "Vite", "Gemini 3.1 Flash"],
+      languages: [
+        { name: "TypeScript", pct: 70, color: "#3178C6" },
+        { name: "Node.js",    pct: 20, color: "#339933" },
+        { name: "Vite",       pct: 10, color: "#646CFF" }
+      ],
+      LLM: [
+        { name: "Gemini 3.1 Flash", pct: 80, color: "#4285F4" },
+        { name: "Google-AI studio", pct: 20, color: "#74AA9C" }
       ]
     }
   ],
