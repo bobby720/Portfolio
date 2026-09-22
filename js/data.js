@@ -13,7 +13,7 @@ const DATA = {
   linkedin: "https://www.linkedin.com/in/eswara-sai-marre-7b7047352/",
   instagram: "https://www.instagram.com/btw_bobby07/",
   github: "https://github.com/bobby720",
-  profileImage: "assets/images/event-workshop.",
+  profileImage: "assets/images/Profile.png",
 
   // ── Timeline ───────────────────────────────────────────────
   timeline: [
@@ -140,7 +140,8 @@ const DATA = {
     { title: "Fundamentals of Java Programming", issuer: "Board Infinity",   date: "2025", image: "assets/images/java-programming-certificate.png" },
     { title: "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional", issuer: "Oracle", date: "2025", image: "assets/images/oracle-certificate.jpg" },
     { title: "Build website with AI",   issuer: "Simplilearn",     date: "2025", image: "assets/images/simplilearn-certificate.jpg" },
-    { title: "AWS Prompt Engineering Fundamentals", issuer: "AWS Training", date: "2026", image: "assets/images/aws-prompt-fundamentals.jpg" }
+    { title: "AWS Prompt Engineering Fundamentals", issuer: "AWS Training", date: "2026", image: "assets/images/aws-prompt-fundamentals.jpg" },
+    { title: "Be10x Workshop", issuer: "Be10x", date: "2026", image: "assets/images/Be10x workshop.jpg" }
   ],
 
   // ── Achievements ───────────────────────────────────────────
@@ -148,9 +149,14 @@ const DATA = {
     { title: "ATF 2025: Stage 2 Candidate",  issuer: "AlgoUniversity",  date: "2025", image: "assets/images/algouniversity-certificate.jpg" },
     { title: "Quizoff 2026 by CampusCrew",   issuer: "CampusCrew",        date: "2026", image: "assets/images/quizoff-2026.jpg" },
     { title: "Gemini Music Night Edition", issuer: "Google", date: "2026", image: "assets/images/gemini-music-night.png" },
-    { title: "Nexus Quiz Championship 2026", issuer: "Nexus", date: "2026", image: "assets/images/nexus-quiz.jpg" }
+    { title: "Nexus Quiz Championship 2026", issuer: "Nexus", date: "2026", image: "assets/images/nexus-quiz.jpg" },
+    { title: "ICAT", issuer: "ICat", date: "2026", image: "assets/images/ICAT.jpg"},
+    { title: "Dvenegers Online round", issuer: "Devengers", date: "2026", image: "assets/images/Devengers Online round.png" },
+    { title: "Devengers Promptwars", issuer: "Devengers", date: "2026", image: "assets/images/Devengers Promptwars.png" },
+    { title: "Galaxy aptitude and reasoning Quiz", issuer: "Quiz Galaxy", date: "2026", image: "assets/images/Galaxy aptitude and reasoning quiz.png" },
+    { title: "Project Vikasit Bharat Innovation Hackathon", issuer: "Vikasit Bharat", date: "2026", image: "assets/images/Project vikasit bharat.png" } 
   ],
 
   // ── Gallery ────────────────────────────────────────────────
-  gallery: ["assets/images/research-conclave.jpg", "assets/images/event-workshop.jpg"]
-};    
+  gallery: ["assets/images/research-conclave.jpg", "assets/images/event-workshop.jpg", "assets/images/ai startup challenge-1.jpg", "assets/images/ai startup challenge-2.jpg"]
+};

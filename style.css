@@ -207,9 +207,9 @@ ul{ list-style:none; }
 /* ═══════════════  NAVBAR  ═══════════════ */
 #navbar{
   position:fixed; top:14px; left:50%; transform:translateX(-50%);
-  width:min(1240px, 94vw); z-index:1000;
+  width:min(1160px, 90vw); z-index:1000;
   display:flex; align-items:center; justify-content:space-between;
-  gap:1rem; padding:.55rem 1.1rem;
+  gap:.7rem; padding:.4rem .8rem;
   background: var(--paper-card);
   border: var(--stroke-thick) solid var(--ink);
   border-radius: 26px 22px 24px 20px / 20px 26px 22px 24px;
@@ -219,22 +219,22 @@ ul{ list-style:none; }
 #navbar.scrolled{ box-shadow: var(--shadow-sm); }
 .nav-logo{
   font-family: var(--font-hand);
-  font-size:1.85rem; font-weight:700; line-height:1;
+  font-size:1.6rem; font-weight:700; line-height:1;
   display:flex; align-items:center; gap:.45rem;
-  padding:.1rem .3rem; color:var(--ink);
+  padding:.05rem .2rem; color:var(--ink);
 }
 .nav-logo::before{
-  content:'✺'; font-size:1.3rem; color:var(--accent-blue);
+  content:'✺'; font-size:1.1rem; color:var(--accent-blue);
   transition: transform .4s var(--ease-spring);
 }
 .nav-logo:hover::before{ transform:rotate(90deg) scale(1.15); }
-.nav-logo::after{ content:'.dev'; color:var(--accent-blue); font-size:1.5rem; }
-.nav-links{ display:flex; align-items:center; gap:.3rem; }
+.nav-logo::after{ content:'.dev'; color:var(--accent-blue); font-size:1.3rem; }
+.nav-links{ display:flex; align-items:center; gap:.15rem; }
 .nav-links a{
   position:relative; display:inline-block;
   font-family: var(--font-label);
-  font-size:1.12rem; letter-spacing:.02em;
-  padding:.35rem .95rem; border-radius:22px 18px 20px 16px / 16px 22px 18px 20px;
+  font-size:1rem; letter-spacing:.02em;
+  padding:.25rem .65rem; border-radius:22px 18px 20px 16px / 16px 22px 18px 20px;
   border:2px solid transparent;
   transition: transform .25s var(--ease-spring), background .25s, border-color .25s;
 }
@@ -458,10 +458,10 @@ section{ padding: 6rem 6vw; position:relative; }
 }
 .hero-note.tape.blue{ background:var(--blue); transform:rotate(-3deg); }
 .hero-note.tape.green{ background:var(--green); transform:rotate(2deg); }
-.note-a{ top:9%; left:44%; }
-.note-b{ top:8%;  right:2%; }
+.note-a{ top:14%; left:44%; }
+.note-b{ top:13%; right:2%; }
 .note-c{ bottom:12%; right:4%; }
-.doodle-arrow{ top:16%; left:40%; width:86px; animation:bob 4.5s ease-in-out infinite; }
+.doodle-arrow{ top:21%; left:40%; width:86px; animation:bob 4.5s ease-in-out infinite; }
 .doodle-star{ top:5%; left:2%; width:44px; animation:wiggle 5s ease-in-out infinite; }
 .doodle-squiggle{ bottom:15%; left:1%; width:70px; opacity:.8; }
 
@@ -522,19 +522,13 @@ section{ padding: 6rem 6vw; position:relative; }
   border-radius:10px 10px 0 0; background:var(--blue);
   transform:rotate(4deg); z-index:0;
 }
-.project-card::before{ /* arrow doodle on hover */
-  content:'→'; position:absolute; right:18px; bottom:10px;
-  font-family:var(--font-hand); font-size:1.7rem; color:var(--ink);
-  opacity:0; transform:translateX(-10px); transition:all .3s var(--ease-spring);
-}
 .project-card:hover{
   transform: rotate(0deg) translateY(-8px) !important;
   box-shadow: 10px 12px 0 var(--ink);
 }
-.project-card:hover::before{ opacity:.85; transform:translateX(0); }
 .project-img, .project-img-placeholder{
   position:relative; z-index:1;
-  width:100%; height:200px; object-fit:cover;
+  width:100%; aspect-ratio:16 / 9; height:auto; object-fit:cover;
   border:2.5px solid var(--ink);
   border-radius:16px 14px 18px 12px / 12px 18px 14px 16px;
   background: var(--paper-dark);
@@ -645,7 +639,7 @@ section{ padding: 6rem 6vw; position:relative; }
 .dynamic-card:hover{ transform:rotate(0deg) translateY(-7px); box-shadow:9px 11px 0 var(--ink); }
 .dynamic-card img,
 .dynamic-card .cert-img{
-  width:100%; height:180px; object-fit:cover; cursor:pointer;
+  display:block; width:100%; aspect-ratio:4 / 3; height:auto; object-fit:contain; cursor:pointer;
   border:2.5px solid var(--ink); border-radius:12px;
   background: var(--paper-dark);
   transition: transform .35s var(--ease-luxury);
