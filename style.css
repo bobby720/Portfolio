@@ -506,7 +506,7 @@ section{ padding: 6rem 6vw; position:relative; }
   border-radius: 22px 18px 24px 16px / 16px 24px 18px 22px;
   box-shadow: var(--shadow);
   padding:.85rem .85rem 1.1rem;
-  overflow:hidden;
+  overflow:visible;
   transition: transform .3s var(--ease-spring), box-shadow .3s var(--ease-spring);
 }
 .project-card:nth-child(3n+1){ transform:rotate(-1.2deg); }
@@ -528,7 +528,7 @@ section{ padding: 6rem 6vw; position:relative; }
 }
 .project-img, .project-img-placeholder{
   position:relative; z-index:1;
-  width:100%; aspect-ratio:16 / 9; height:auto; object-fit:cover;
+  width:100%; aspect-ratio:16 / 9; height:auto; object-fit:contain;
   border:2.5px solid var(--ink);
   border-radius:16px 14px 18px 12px / 12px 18px 14px 16px;
   background: var(--paper-dark);
