@@ -207,7 +207,7 @@ ul{ list-style:none; }
 /* ═══════════════  NAVBAR  ═══════════════ */
 #navbar{
   position:fixed; top:14px; left:50%; transform:translateX(-50%);
-  width:min(1160px, 90vw); z-index:1000;
+  width:min(1000px, 82vw); z-index:1000;
   display:flex; align-items:center; justify-content:space-between;
   gap:.7rem; padding:.4rem .8rem;
   background: var(--paper-card);
@@ -252,7 +252,6 @@ ul{ list-style:none; }
   box-shadow:2px 2px 0 var(--ink);
 }
 .nav-links a.active::after{ transform:scaleX(0); }
-
 .nav-hamburger{
   display:none; background:var(--paper-card);
   border:2.5px solid var(--ink); border-radius:12px 10px 12px 9px;
@@ -528,7 +527,7 @@ section{ padding: 6rem 6vw; position:relative; }
 }
 .project-img, .project-img-placeholder{
   position:relative; z-index:1;
-  width:100%; aspect-ratio:16 / 9; height:auto; object-fit:contain;
+  width:100%; aspect-ratio:2.2 / 1; height:auto; object-fit:contain;
   border:2.5px solid var(--ink);
   border-radius:16px 14px 18px 12px / 12px 18px 14px 16px;
   background: var(--paper-dark);
@@ -680,13 +679,9 @@ section{ padding: 6rem 6vw; position:relative; }
 .masonry-item:nth-child(3n+2){ transform:rotate(1.6deg); }
 .masonry-item:nth-child(3n+3){ transform:rotate(-.8deg); }
 .masonry-item::before{ /* tape */
-  content:''; position:absolute; top:-12px; left:22px;
+  content:''; position:absolute; top:10px; left:22px; z-index:2;
   width:70px; height:24px; transform:rotate(-8deg);
   background: rgba(221,244,215,.85); border:2px solid var(--ink); border-radius:3px;
-}
-.masonry-item::after{ /* handwritten caption line */
-  content:'snapshot ✦'; position:absolute; bottom:.55rem; left:0; right:0;
-  text-align:center; font-family:var(--font-hand); font-size:1.1rem; color:var(--muted);
 }
 .masonry-item:hover{ transform:rotate(0deg) translateY(-6px); box-shadow:9px 11px 0 var(--ink); }
 .masonry-item img{
@@ -695,6 +690,13 @@ section{ padding: 6rem 6vw; position:relative; }
   transition: transform .45s var(--ease-luxury);
 }
 .masonry-item:hover img{ transform:scale(1.02); }
+.gallery-caption{
+  margin:.7rem 0 -.8rem;
+  text-align:center;
+  font-family:var(--font-hand);
+  font-size:1.1rem;
+  color:var(--muted);
+}
 
 /* ═══════════════  CONTACT  ═══════════════ */
 .contact-grid{

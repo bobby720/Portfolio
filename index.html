@@ -44,15 +44,12 @@
 <nav id="navbar">
   <a href="#hero" class="nav-logo">Eswara</a>
   <ul class="nav-links">
-    <li><a href="#hero">Home</a></li><li><a href="about.html">About</a></li><li><a href="#projects">Projects</a></li>
-    <li><a href="about.html#skills">Skills</a></li><li><a href="about.html#timeline">Experience</a></li><li><a href="#certificates">Certificates</a></li>
-    <li><a href="#achievements">Achievements</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li>
+    <li><a href="#hero">Home</a></li><li><a href="about.html">About</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div id="mobile-menu">
-  <a href="#hero">Home</a><a href="about.html">About</a><a href="#projects">Projects</a><a href="about.html#skills">Skills</a>
-  <a href="about.html#timeline">Experience</a><a href="#certificates">Certificates</a><a href="#achievements">Achievements</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+  <a href="#hero">Home</a><a href="about.html">About</a>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -459,7 +456,7 @@ if (profileImage && DATA.profileImage) profileImage.src = DATA.profileImage;
     const caption = typeof item === 'string' ? '' : item.caption || '';
     const div = document.createElement('div');
     div.className = 'masonry-item';
-    div.innerHTML = `<img src="${image}" alt="${caption}">`;
+    div.innerHTML = `<img src="${image}" alt="${caption}"><p class="gallery-caption">${caption}</p>`;
     grid.appendChild(div);
   });
 })();

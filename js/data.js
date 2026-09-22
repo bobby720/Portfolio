@@ -43,7 +43,7 @@ const DATA = {
       title: "ShareNStore",
       category: "Self-Initiated Projects",
       description: "A collaborative cloud storage platform enabling seamless file sharing with granular permission controls and real-time sync.",
-      image: "assets/images/event-workshop.",
+      image: "assets/images/event-workshop",
       tech: ["JavaScript", "TypeScript", "MySQL", "React","ChatGPT (Model GPT-5.5)", "Gemini (Model 3.1 Flash)"],
       github: "https://github.com/bobby720/sharenstore",
       live: "#",
@@ -62,7 +62,7 @@ const DATA = {
       title: "Nano Gallery",
       category: "Self-Initiated Projects",
       description: "Nano Gallery is a web-based AI prompt discovery platform that provides users with a curated collection of reusable prompts for generative AI tools such as Gemini.",
-      image: "assets/images/research-conclave.",
+      image: "assets/images/research-conclave",
       tech: ["HTML", "CSS", "JavaScript", "ChatGPT (Model GPT-5.5)", "Gemini (Model NanoBanana)"],
       github: "https://github.com/bobby720/nano-gallery",
       live: "#",
@@ -80,7 +80,7 @@ const DATA = {
       title: "Digi Library",
       category: "Hackathon Innovations",
       description: "A digital library management system featuring smart search, cataloguing, borrowing workflows, and admin dashboards.",
-      image: "assets/images/aws-prompt-fundamentals.",
+      image: "assets/images/aws-prompt-fundamentals",
       tech: ["React", "Tailwind CSS", "Node.js", "MySQL", "ChatGPT (Model GPT-5.5)", "Gemini (Model 3.1 Flash)", "AntigravityAI"],
       github: "https://github.com/bobby720/Digi_Library",
       live: "https://digi-library-chi.vercel.app",
@@ -100,7 +100,7 @@ const DATA = {
       title: "Portfolio Website",
       category: "Self-Initiated Projects",
       description: "A responsive portfolio website showcasing my work and skills as a developer.",
-      image: "assets/images/portfolio-certificate.",
+      image: "assets/images/portfolio-certificate",
       tech: ["HTML", "CSS", "JavaScript","Claude (Model Opus 4.6, Sonnet 4.6)"],
       github: "https://github.com/bobby720/portfolio",
       live: "https://eswarasaimarre.netlify.app/",
@@ -118,7 +118,7 @@ const DATA = {
       title: "CleanWard-AI",
       category: "Hackathon Innovations",
       description: "An AI-powered rural and urban waste management system that uses computer vision to identify and sort waste materials, providing real-time feedback to users.",
-      image: "assets/images/cleanward-ai.",
+      image: "assets/images/Gemini ai powered challenge",
       tech: ["Python", "Flask", "JavaScript", "ChatGPT (Model GPT-5.5)", "Gemini (Model 3.1 Flash)"],
       github: "https://github.com/bobby720/Cleanward-ai-DCODEP",
       live: "https://cleanward.ai.studio/",
@@ -132,9 +132,28 @@ const DATA = {
         { name: "Gemini 3.1 Flash", pct: 80, color: "#4285F4" },
         { name: "Google-AI studio", pct: 20, color: "#74AA9C" }
       ]
+    },
+    {
+      title: "CineMatch — Smart Movie Recommendation System",
+      category: "Hackathon Innovations",
+      description: "A smart movie recommendation platform that suggests movies by combining mood-based NLP, user interests, rating-based scoring, and metadata filters with an interactive glassmorphism UI.",
+      image: "assets/images/cinematch",
+      tech: ["Python", "Streamlit", "Microsoft SQL Server", "PyODBC", "NLP", "Custom CSS"],
+      github: "https://github.com/bobby720/CineMatch---Smart-Movie-recommendation-system",
+      live: "",
+      languages: [
+        { name: "Python", pct: 60, color: "#3776AB" },
+        { name: "Streamlit", pct: 20, color: "#FF4B4B" },
+        { name: "SQL", pct: 20, color: "#F29111" }
+      ],
+      LLM: [
+        { name: "NLP Models", pct: 50, color: "#74AA9C" },
+        { name: "Custom Algorithms", pct: 50, color: "#D4AF37" },
+        { name: "Gemini 3.1 Flash", pct: 30, color: "#4285F4" },
+        { name: "ChatGPT GPT-5.5", pct: 30, color: "#74AA9C" }
+      ]
     }
   ],
-
   // ── Certificates ───────────────────────────────────────────
   certificates: [
     { title: "Fundamentals of Java Programming", issuer: "Board Infinity",   date: "2025", image: "assets/images/java-programming-certificate.png" },
@@ -158,5 +177,10 @@ const DATA = {
   ],
 
   // ── Gallery ────────────────────────────────────────────────
-  gallery: ["assets/images/research-conclave.jpg", "assets/images/event-workshop.jpg", "assets/images/ai startup challenge-1.jpg", "assets/images/ai startup challenge-2.jpg"]
+  gallery: [
+    { src: "assets/images/research-conclave.jpg", caption: "SAHE Hackathon" },
+    { src: "assets/images/event-workshop.jpg", caption: "SAHE Hackathon: Team Edition" },
+    { src: "assets/images/ai startup challenge-1.jpg", caption: "AI Startup Challenge" },
+    { src: "assets/images/ai startup challenge-2.jpg", caption: "AI Startup Challenge: Team Edition" }
+  ]
 };
