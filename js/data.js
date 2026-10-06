@@ -43,10 +43,10 @@ const DATA = {
       title: "ShareNStore",
       category: "Self-Initiated Projects",
       description: "A collaborative cloud storage platform enabling seamless file sharing with granular permission controls and real-time sync.",
-      image: "assets/images/event-workshop",
+      image: "assets/images/evejpg",
       tech: ["JavaScript", "TypeScript", "MySQL", "React","ChatGPT (Model GPT-5.5)", "Gemini (Model 3.1 Flash)"],
       github: "https://github.com/bobby720/sharenstore",
-      live: "#",
+      live: "https://virtual-storage-rooms-527.created.app/",
       // ── EDIT THESE PERCENTAGES ──────────────────────────────
       languages: [
         { name: "JavaScript", pct: 55.6, color: "#F7DF1E" },
@@ -62,7 +62,7 @@ const DATA = {
       title: "Nano Gallery",
       category: "Self-Initiated Projects",
       description: "Nano Gallery is a web-based AI prompt discovery platform that provides users with a curated collection of reusable prompts for generative AI tools such as Gemini.",
-      image: "assets/images/research-conclave",
+      image: "assets/images/researclave.jpg",
       tech: ["HTML", "CSS", "JavaScript", "ChatGPT (Model GPT-5.5)", "Gemini (Model NanoBanana)"],
       github: "https://github.com/bobby720/nano-gallery",
       live: "#",
@@ -80,7 +80,7 @@ const DATA = {
       title: "Digi Library",
       category: "Hackathon Innovations",
       description: "A digital library management system featuring smart search, cataloguing, borrowing workflows, and admin dashboards.",
-      image: "assets/images/aws-prompt-fundamentals",
+      image: "assets/images/aws-prompdamentals.jpg",
       tech: ["React", "Tailwind CSS", "Node.js", "MySQL", "ChatGPT (Model GPT-5.5)", "Gemini (Model 3.1 Flash)", "AntigravityAI"],
       github: "https://github.com/bobby720/Digi_Library",
       live: "https://digi-library-chi.vercel.app",
@@ -100,7 +100,7 @@ const DATA = {
       title: "Portfolio Website",
       category: "Self-Initiated Projects",
       description: "A responsive portfolio website showcasing my work and skills as a developer.",
-      image: "assets/images/portfolio-certificate",
+      image: "assets/images/portfolio-certife.jpg",
       tech: ["HTML", "CSS", "JavaScript","Claude (Model Opus 4.6, Sonnet 4.6)"],
       github: "https://github.com/bobby720/portfolio",
       live: "https://eswarasaimarre.netlify.app/",
@@ -118,11 +118,10 @@ const DATA = {
       title: "CleanWard-AI",
       category: "Hackathon Innovations",
       description: "An AI-powered rural and urban waste management system that uses computer vision to identify and sort waste materials, providing real-time feedback to users.",
-      image: "assets/images/Gemini ai powered challenge",
+      image: "assets/images/Gemini ai powered nge.png",
       tech: ["Python", "Flask", "JavaScript", "ChatGPT (Model GPT-5.5)", "Gemini (Model 3.1 Flash)"],
       github: "https://github.com/bobby720/Cleanward-ai-DCODEP",
       live: "https://cleanward.ai.studio/",
-      tech: ["TypeScript", "Node.js", "Vite", "Gemini 3.1 Flash"],
       languages: [
         { name: "TypeScript", pct: 70, color: "#3178C6" },
         { name: "Node.js",    pct: 20, color: "#339933" },
@@ -137,7 +136,7 @@ const DATA = {
       title: "CineMatch — Smart Movie Recommendation System",
       category: "Hackathon Innovations",
       description: "A smart movie recommendation platform that suggests movies by combining mood-based NLP, user interests, rating-based scoring, and metadata filters with an interactive glassmorphism UI.",
-      image: "assets/images/cinematch",
+      image: "",
       tech: ["Python", "Streamlit", "Microsoft SQL Server", "PyODBC", "NLP", "Custom CSS"],
       github: "https://github.com/bobby720/CineMatch---Smart-Movie-recommendation-system",
       live: "",
@@ -173,7 +172,8 @@ const DATA = {
     { title: "Dvenegers Online round", issuer: "Devengers", date: "2026", image: "assets/images/Devengers Online round.png" },
     { title: "Devengers Promptwars", issuer: "Devengers", date: "2026", image: "assets/images/Devengers Promptwars.png" },
     { title: "Galaxy aptitude and reasoning Quiz", issuer: "Quiz Galaxy", date: "2026", image: "assets/images/Galaxy aptitude and reasoning quiz.png" },
-    { title: "Project Vikasit Bharat Innovation Hackathon", issuer: "Vikasit Bharat", date: "2026", image: "assets/images/Project vikasit bharat.png" } 
+    { title: "Project Vikasit Bharat Innovation Hackathon", issuer: "Vikasit Bharat", date: "2026", image: "assets/images/Project vikasit bharat.png" },
+    { title: "HackDay-1.0", issuer: "Unstop", date: "2026", image: "assets/images/Hackday 1.0.jpg" }, 
   ],
 
   // ── Gallery ────────────────────────────────────────────────
@@ -181,6 +181,9 @@ const DATA = {
     { src: "assets/images/research-conclave.jpg", caption: "SAHE Hackathon" },
     { src: "assets/images/event-workshop.jpg", caption: "SAHE Hackathon: Team Edition" },
     { src: "assets/images/ai startup challenge-1.jpg", caption: "AI Startup Challenge" },
-    { src: "assets/images/ai startup challenge-2.jpg", caption: "AI Startup Challenge: Team Edition" }
+    { src: "assets/images/ai startup challenge-2.jpg", caption: "AI Startup Challenge: Team Edition" },
+    { src: "assets/images/Microsoft quiz champ.jpg", caption: "Microsoft-github event Devdays Quiz top prize" },
+    { src: "assets/images/Ms B4.jpeg", caption: "Microsoft Event Day" },
+    { src: "assets/images/Ms id.jpeg", caption: "Microsoft Visitor ID" }
   ]
 };
