@@ -65,7 +65,7 @@ const DATA = {
       image: "assets/images/researclave.jpg",
       tech: ["HTML", "CSS", "JavaScript", "ChatGPT (Model GPT-5.5)", "Gemini (Model NanoBanana)"],
       github: "https://github.com/bobby720/nano-gallery",
-      live: "#",
+      live: "https://nano-gallery.netlify.app/",
       languages: [
         { name: "JavaScript", pct: 62, color: "#F7DF1E" },
         { name: "HTML",       pct: 28, color: "#E34F26" },
@@ -159,7 +159,8 @@ const DATA = {
     { title: "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional", issuer: "Oracle", date: "2025", image: "assets/images/oracle-certificate.jpg" },
     { title: "Build website with AI",   issuer: "Simplilearn",     date: "2025", image: "assets/images/simplilearn-certificate.jpg" },
     { title: "AWS Prompt Engineering Fundamentals", issuer: "AWS Training", date: "2026", image: "assets/images/aws-prompt-fundamentals.jpg" },
-    { title: "Be10x Workshop", issuer: "Be10x", date: "2026", image: "assets/images/Be10x workshop.jpg" }
+    { title: "Be10x Workshop", issuer: "Be10x", date: "2026", image: "assets/images/Be10x workshop.jpg" },
+    { title: "DevDays participation", issuer: "Github-copilot", date: "2026", image: "assets/images/60.jpg" }
   ],
 
   // ── Achievements ───────────────────────────────────────────
