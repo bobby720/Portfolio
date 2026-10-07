@@ -160,7 +160,7 @@ const DATA = {
     { title: "Build website with AI",   issuer: "Simplilearn",     date: "2025", image: "assets/images/simplilearn-certificate.jpg" },
     { title: "AWS Prompt Engineering Fundamentals", issuer: "AWS Training", date: "2026", image: "assets/images/aws-prompt-fundamentals.jpg" },
     { title: "Be10x Workshop", issuer: "Be10x", date: "2026", image: "assets/images/Be10x workshop.jpg" },
-    { title: "DevDays participation", issuer: "Github-copilot", date: "2026", image: "assets/images/60.jpg" }
+    { title: "DevDays participation", issuer: "Github-copilot", date: "2026", image: "assets/images/60.png" }
   ],
 
   // ── Achievements ───────────────────────────────────────────
