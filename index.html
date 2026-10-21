@@ -5,503 +5,132 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <meta name="description" content="Eswara Sai – AI Application Architect & Full Stack Developer"/>
   <title>Eswara Sai · AI Application Architect</title>
+  <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Patrick+Hand&family=Kalam:wght@400;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
-  <!--  Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Kalam:wght@400;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
-<body>
-
-<!-- ── Noise overlay ───────────────────────────────────────── -->
+<body class="home-page">
 <div id="noise"></div>
-
-
-<!-- ── Lightbox ────────────────────────────────────────────── -->
 <div id="lightbox">
   <span id="lightbox-close">✕</span>
-  <img id="lightbox-img" src="" alt="Gallery preview"/>
+  <img id="lightbox-img" src="" alt="Portfolio preview"/>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     LOADING SCREEN
-═══════════════════════════════════════════════════════════ -->
-<div id="loader">
-  <div id="loader-content">
-    <h1 id="loader-name">
-      <!-- Letters injected by JS below -->
-    </h1>
-    <p id="loader-title">loading my little corner of the internet…</p>
-    <div id="loader-bar"><div id="loader-bar-fill"></div></div>
-    <p id="loader-percent">0%</p>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
-     NAVIGATION
-═══════════════════════════════════════════════════════════ -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">Eswara</a>
+  <a href="/" class="nav-logo">Eswara</a>
   <ul class="nav-links">
-    <li><a href="#hero">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="/" class="active" aria-current="page">Home</a></li>
+    <li><a href="/about.html">About</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div id="mobile-menu">
-  <a href="#hero">Home</a><a href="about.html">About</a>
+  <a href="/" aria-current="page">Home</a>
+  <a href="/about.html">About</a>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     HERO
-═══════════════════════════════════════════════════════════ -->
-<section id="hero">
-  <!-- Left -->
-  <div class="hero-text">
-    <p class="hero-eyebrow">Hi,</p>
-    <h1 class="hero-name">
-      ESWARA<br>
-      <em>SAI</em>
-    </h1>
-    <p class="hero-subtitle">AI Application Architect</p>
-    <p class="hero-desc">Building intelligent products that solve real‑world problems using software and artificial intelligence.</p>
-    <div class="hero-cta">
-      <a href="#projects" class="btn btn-gold">Explore Projects</a>
-      <a href="#contact"  class="btn btn-outline">Contact Me</a>
-    </div>
-  </div>
-
-  <!-- Right – Profile Image -->
-  <div class="hero-image-wrap">
-    <div class="hero-image-ring"></div>
-    <div class="hero-image-ring-2"></div>
-    <img
-      id="hero-profile-img"
-      class="hero-profile"
-      src="assets/images/event-workshop.jpg"
-      alt="Eswara Sai"
-      onerror="this.style.display='none'; document.getElementById('hero-profile-placeholder').style.display='flex';"
-    />
-    <div id="hero-profile-placeholder" class="hero-profile-placeholder" style="display:none;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-        <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-      </svg>
-      <span>profile photo</span>
-    </div>
-  </div>
-
-
-  <!-- Hand-drawn annotations & doodles -->
-  <span class="doodle doodle-star" aria-hidden="true">
-    <svg viewBox="0 0 40 40" width="44"><path d="M20 3v34M3 20h34M7 7l26 26M33 7 7 33"/></svg>
-  </span>
-  <span class="doodle doodle-squiggle" aria-hidden="true">
-    <svg viewBox="0 0 80 30" width="70"><path d="M2 22c8-24 14 20 22-2s14 18 22-4 12 12 16 6"/></svg>
-  </span>
-  <span class="doodle doodle-arrow" aria-hidden="true">
-    <svg viewBox="0 0 100 60" width="86"><path d="M4 6c26 4 48 20 66 42"/><path d="M52 50l18 2-4-18"/></svg>
-  </span>
-  <span class="hero-note tape note-a" aria-hidden="true">Good ideas build better futures!</span>
-  <span class="hero-note tape blue note-b" aria-hidden="true">BUILD · LEARN · GROW · REPEAT</span>
-  <span class="hero-note tape green note-c" aria-hidden="true">ideas → code ☕</span>
-
-  <!-- Scroll hint -->
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-hint-line"></div>
-  </div>
-</section>
-
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     PROJECTS
-═══════════════════════════════════════════════════════════ -->
-<section id="projects">
-  <p class="section-label reveal">01 — things I built</p>
-  <h2 class="section-title reveal" data-delay="1"><em>Projects</em></h2>
-  <div class="projects-grid" id="projects-grid"></div>
-</section>
-
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     CERTIFICATES & ACHIEVEMENTS
-═══════════════════════════════════════════════════════════════════ -->
-<section id="certificates" style="background:var(--bg-secondary)">
-  <p class="section-label reveal">02 — proof &amp; little wins</p>
-  <h2 class="section-title reveal" data-delay="1">Certificates &amp;<br><em>Achievements</em></h2>
-  <div class="section-subpanel reveal" data-delay="2">
-    <h3 class="subpanel-title">Certificates</h3>
-    <div id="certs-container"></div>
-  </div>
-  <div class="section-subpanel reveal" data-delay="3">
-    <h3 class="subpanel-title">Achievements</h3>
-    <div id="achievements" class="anchor-target"></div>
-    <div id="achievements-container"></div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     GALLERY
-═══════════════════════════════════════════════════════════ -->
-<section id="gallery">
-  <p class="section-label reveal">03 — visual journal</p>
-  <h2 class="section-title reveal" data-delay="1">Visual<br><em>Journal</em></h2>
-  <div class="masonry-grid" id="gallery-grid"></div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     CONTACT
-═══════════════════════════════════════════════════════════ -->
-<section id="contact" style="background:var(--bg-secondary)">
-  <p class="section-label reveal">05 — say hello</p>
-  <h2 class="section-title reveal" data-delay="1">Let's Build<br><em>Together</em></h2>
-
-  <div class="contact-grid">
-    <div class="contact-info reveal-left" data-delay="2">
-      <h3>Have a project in mind?</h3>
-      <p>Whether it's an AI-powered application, a full stack system, or a bold new product idea — I'd love to hear about it.</p>
-      <div class="contact-detail">
-        <div class="contact-detail-icon"><i class="fa fa-envelope"></i></div>
-        <span id="contact-email"></span>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-detail-icon"><i class="fab fa-github"></i></div>
-        <span id="contact-github-user"></span>
+<main>
+  <section id="hero" class="new-home-hero" aria-label="Home">
+    <div class="new-home-content">
+      <p class="new-home-hi">Hi, I’m <span aria-hidden="true">👋</span></p>
+      <h1 class="new-home-name">ESWARA <span class="new-home-name-sai">SAI</span></h1>
+      <p class="new-home-role"><span>AI Application Architect</span></p>
+      <p class="new-home-lead">Building intelligent products that solve real-world problems using software and artificial intelligence.</p>
+      <div class="new-home-socials" aria-label="Social links">
+        <a id="hero-linkedin" href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        <a id="hero-github" href="#" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a id="hero-instagram" href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a id="hero-email" href="#" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        <svg class="new-home-arrow new-home-arrow-cta" viewBox="0 0 40 20" aria-hidden="true"><path d="M3 10h34M8 4 2 10l6 6M32 4l6 6-6 6"/></svg>
+        <p class="new-home-note new-home-note-cta">Let’s Build<br>Something<br>Amazing!</p>
       </div>
     </div>
 
-    <form class="contact-form reveal-right" data-delay="3" id="contact-form">
-      <div class="form-group">
-        <label>Name</label>
-        <input type="text" placeholder="Your full name" required/>
+    <div class="new-home-art" aria-label="Portfolio portraits">
+      <div class="new-home-art-slot new-home-art-main" data-asset="/assets/images/main-portrait.webp">
+        <img src="/assets/images/main-portrait.webp" alt="Eswara Sai portrait" class="new-home-main-portrait" fetchpriority="high" decoding="async">
+        <div class="new-home-art-placeholder" role="note"><span>Main portrait unavailable</span></div>
       </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" placeholder="your@email.com" required/>
+      <div class="new-home-art-slot new-home-art-polaroid" data-asset="/assets/images/polaroid-portrait.webp">
+        <img src="/assets/images/polaroid-portrait.webp" alt="Handwritten polaroid portrait" class="new-home-polaroid-image" decoding="async">
+        <div class="new-home-art-placeholder" role="note"><span>Polaroid portrait unavailable</span></div>
       </div>
-      <div class="form-group">
-        <label>Message</label>
-        <textarea placeholder="Tell me about your project…" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-gold">Send Message</button>
-      <p class="form-note" id="form-note">Got it! ✦ I'll write back soon.</p>
-    </form>
-  </div>
-</section>
+    </div>
+  </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     FOOTER
-═══════════════════════════════════════════════════════════ -->
-<footer>
-  <div class="footer-line"></div>
-  <p class="footer-name" id="footer-name"></p>
-  <p class="footer-title" id="footer-title"></p>
-  <div class="footer-socials" id="footer-socials"></div>
-  <p class="footer-copy" id="footer-copy"></p>
-</footer>
+  <section id="projects">
+    <p class="section-label reveal">01 — things I built</p>
+    <h2 class="section-title reveal" data-delay="1"><em>Projects</em></h2>
+    <div class="projects-grid" id="projects-grid"></div>
+  </section>
 
-<!-- ─── Scripts ─────────────────────────────────────────────── -->
-<script src="js/data.js"></script>
-<script>
-/* ============================================================
-   Inline bootstrap – runs after data.js is loaded,
-   populates the DOM from DATA before script.js runs.
-   ============================================================ */
+  <section id="certificates" class="section-tinted">
+    <p class="section-label reveal">02 — proof &amp; little wins</p>
+    <h2 class="section-title reveal" data-delay="1">Certificates &amp;<br><em>Achievements</em></h2>
+    <div class="section-subpanel reveal" data-delay="2">
+      <h3 class="subpanel-title">Certificates</h3>
+      <div id="certs-container"></div>
+    </div>
+    <div class="section-subpanel reveal" data-delay="3">
+      <h3 class="subpanel-title">Achievements</h3>
+      <div id="achievements-container"></div>
+    </div>
+  </section>
 
-// ── Loader letters ──────────────────────────────────────────
-(function () {
-  const nameEl = document.getElementById('loader-name');
-  if (!nameEl) return;
-  const full = (DATA.name || 'ESWARA SAI').toUpperCase();
-  nameEl.innerHTML = full.split('').map(c =>
-    c === ' ' ? '<span style="width:.4em;display:inline-block;"></span>'
-              : `<span>${c}</span>`
-  ).join('');
-})();
+  <section id="gallery">
+    <p class="section-label reveal">03 — visual journal</p>
+    <h2 class="section-title reveal" data-delay="1">Visual<br><em>Journal</em></h2>
+    <div class="masonry-grid" id="gallery-grid"></div>
+  </section>
 
-// ── Skill icons map ─────────────────────────────────────────
-const SKILL_ICONS = {
-  'HTML':'<i class="fab fa-html5"></i>',
-  'CSS':'<i class="fab fa-css3-alt"></i>',
-  'JavaScript':'<i class="fab fa-js-square"></i>',
-  'React':'<i class="fab fa-react"></i>',
-  'Java':'<i class="fab fa-java"></i>',
-  'Spring Boot':'<i class="fas fa-leaf"></i>',
-  'Python':'<i class="fab fa-python"></i>',
-  'MySQL':'<i class="fas fa-database"></i>',
-  'Git':'<i class="fab fa-git-alt"></i>',
-  'GitHub':'<i class="fab fa-github"></i>',
-  'VS Code':'<i class="fas fa-code"></i>',
-  'IntelliJ IDEA':'<i class="fas fa-infinity"></i>',
-  'ChatGPT (Model GPT-5.5)':'<svg class="llm-icon" viewBox="0 0 2406 2406" aria-hidden="true"><g fill="currentColor"><path d="M1107.3 299.1c-197.999 0-373.9 127.3-435.2 315.3L650 743.5v427.9c0 21.4 11 40.4 29.4 51.4l344.5 198.515V833.3h.1v-27.9L1372.7 604c33.715-19.52 70.44-32.857 108.47-39.828L1447.6 450.3C1361 353.5 1237.1 298.5 1107.3 299.1zm0 117.5-.6.6c79.699 0 156.3 27.5 217.6 78.4-2.5 1.2-7.4 4.3-11 6.1L952.8 709.3c-18.4 10.4-29.4 30-29.4 51.4V1248l-155.1-89.4V755.8c-.1-187.099 151.601-338.9 339-339.2z"/><use href="#openai-mark" transform="rotate(60 1203 1203)"/><use href="#openai-mark" transform="rotate(120 1203 1203)"/><use href="#openai-mark" transform="rotate(180 1203 1203)"/><use href="#openai-mark" transform="rotate(240 1203 1203)"/><use href="#openai-mark" transform="rotate(300 1203 1203)"/></g><defs><path id="openai-mark" d="M1107.3 299.1c-197.999 0-373.9 127.3-435.2 315.3L650 743.5v427.9c0 21.4 11 40.4 29.4 51.4l344.5 198.515V833.3h.1v-27.9L1372.7 604c33.715-19.52 70.44-32.857 108.47-39.828L1447.6 450.3C1361 353.5 1237.1 298.5 1107.3 299.1zm0 117.5-.6.6c79.699 0 156.3 27.5 217.6 78.4-2.5 1.2-7.4 4.3-11 6.1L952.8 709.3c-18.4 10.4-29.4 30-29.4 51.4V1248l-155.1-89.4V755.8c-.1-187.099 151.601-338.9 339-339.2z"/></defs></svg>',
-  'Gemini (Model 3.1 Flash)':'<svg class="llm-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></svg>',
-  'Claude (Model Haiku 4.5, Sonnet 4.6)':'<svg class="llm-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#D97757" d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg>',
-  'AntigravityAI':'<svg class="llm-icon" viewBox="0 0 136 136" aria-hidden="true"><path fill="#3186FF" d="M89.6992 93.695C94.3659 97.195 101.366 94.8617 94.9492 88.445C75.6992 69.7783 79.7825 18.445 55.8659 18.445C31.9492 18.445 36.0325 69.7783 16.7825 88.445C9.78251 95.445 17.3658 97.195 22.0325 93.695C40.1159 81.445 38.9492 59.8617 55.8659 59.8617C72.7825 59.8617 71.6159 81.445 89.6992 93.695Z" transform="translate(12 10)"/></svg>'
-};
-const SKILL_LEVELS = {
-  'HTML':100,'CSS':100,'JavaScript':100,
-  'Java':100,'Spring Boot':100,'Python':100,
-  'MySQL':100,
-  'Git':100,'GitHub':100,'VS Code':100,'IntelliJ IDEA':100,
-  'ChatGPT (Model GPT-5.5)':100,'Gemini (Model 3.1 Flash)':100,'Claude (Model Haiku 4.5, Sonnet 4.6)':100,'AntigravityAI':100  
-};
-
-const profileImage = document.getElementById('hero-profile-img');
-if (profileImage && DATA.profileImage) profileImage.src = DATA.profileImage;
-
-
-
-// ── Projects ────────────────────────────────────────────────
-(function () {
-  const grid = document.getElementById('projects-grid');
-  if (!grid || !DATA.projects) return;
-
-  /* Build the stacked-bar + legend for languages or AI tools */
-  function buildBarPanel(items, label) {
-    if (!items || !items.length) return '';
-
-    // Normalise to 100%
-    const total = items.reduce((s, x) => s + (x.pct || 0), 0);
-    const norm  = total > 0 ? 100 / total : 1;
-
-    const segments = items.map(x =>
-      `<div class="pbar-seg" style="width:${(x.pct * norm).toFixed(2)}%;background:${x.color||'#D4AF37'};"
-            title="${x.name} ${x.pct}%"></div>`
-    ).join('');
-
-    const dots = items.map(x =>
-      `<span class="pbar-dot-wrap">
-         <span class="pbar-dot" style="background:${x.color||'#D4AF37'};"></span>
-         <span class="pbar-dot-name">${x.name}</span>
-         <span class="pbar-dot-pct">${x.pct}%</span>
-       </span>`
-    ).join('');
-
-    return `
-      <div class="pbar-panel">
-        <p class="pbar-label">${label}</p>
-        <div class="pbar-track">${segments}</div>
-        <div class="pbar-legend">${dots}</div>
-      </div>`;
-  }
-
-  // Group projects by category
-  const groupedByCategory = {};
-  const categoryOrder = ["Self-Initiated Projects", "Academic projects", "Hackathon Innovations"];
-  
-  DATA.projects.forEach(p => {
-    const cat = p.category || "Other";
-    if (!groupedByCategory[cat]) {
-      groupedByCategory[cat] = [];
-    }
-    groupedByCategory[cat].push(p);
-  });
-
-  // Render categories and projects in order
-  categoryOrder.forEach(category => {
-    if (!groupedByCategory[category] || groupedByCategory[category].length === 0) return;
-
-    // Create category title
-    const categoryTitle = document.createElement('div');
-    categoryTitle.className = 'project-category-title reveal';
-    categoryTitle.innerHTML = `<h3>${category}</h3>`;
-    grid.appendChild(categoryTitle);
-
-    // Create container for projects in this category
-    const categoryContainer = document.createElement('div');
-    categoryContainer.className = 'project-category-container';
-    
-    groupedByCategory[category].forEach((p, i) => {
-      const card = document.createElement('div');
-      card.className = 'project-card reveal';
-      card.dataset.delay = (i % 3) + 1;
-
-      const imgHtml = p.image && p.image !== '#'
-        ? `<img class="project-img" src="${p.image}" alt="${p.title}"
-               onerror="this.outerHTML='<div class=\\'project-img-placeholder\\'>${p.title}</div>'">`
-        : `<div class="project-img-placeholder">${p.title}</div>`;
-
-      const techTags = (p.tech || []).map(t => `<span class="tech-tag">${t}</span>`).join('');
-      const ghBtn    = p.github
-        ? `<a href="${p.github}" class="btn btn-outline btn-sm" target="_blank"><i class="fab fa-github"></i> GitHub</a>`
-        : '';
-      const liveBtn  = p.live && p.live !== '#'
-        ? `<a href="${p.live}" class="btn btn-gold btn-sm" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>`
-        : '';
-
-      const langBar = buildBarPanel(p.languages, 'Languages');
-      const aiBar   = buildBarPanel(p.LLM,        'LLM Usage');
-
-      card.innerHTML = `
-        ${imgHtml}
-        <div class="project-body">
-          <h3 class="project-title">${p.title}</h3>
-          <p class="project-desc">${p.description}</p>
-          <div class="project-tech">${techTags}</div>
-          ${langBar}
-          ${aiBar}
-          <div class="project-links">${ghBtn}${liveBtn}</div>
+  <section id="contact" class="section-tinted">
+    <p class="section-label reveal">05 — say hello</p>
+    <h2 class="section-title reveal" data-delay="1">Let's Build<br><em>Together</em></h2>
+    <div class="contact-grid">
+      <div class="contact-info reveal-left" data-delay="2">
+        <h3>Have a project in mind?</h3>
+        <p>Whether it's an AI-powered application, a full stack system, or a bold new product idea — I'd love to hear about it.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fa fa-envelope"></i></div>
+          <span id="contact-email"></span>
         </div>
-      `;
-      categoryContainer.appendChild(card);
-    });
-    
-    grid.appendChild(categoryContainer);
-  });
-
-  /* Animate bars when card enters viewport */
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('.pbar-seg').forEach(seg => {
-          const target = seg.style.width;
-          seg.style.width = '0%';
-          requestAnimationFrame(() => {
-            seg.style.transition = 'width 1s cubic-bezier(0.25,0.46,0.45,0.94)';
-            seg.style.width = target;
-          });
-        });
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.25 });
-  document.querySelectorAll('.project-card').forEach(c => io.observe(c));
-})();
-
-// ── Timeline ─────────────────────────────────────────────────
-(function () {
-  const container = document.getElementById('timeline-items');
-  if (!container || !DATA.timeline) return;
-
-  DATA.timeline.forEach((t, i) => {
-    const item = document.createElement('div');
-    item.className = 'timeline-item reveal';
-    item.dataset.delay = i + 1;
-    item.innerHTML = `
-      <div class="timeline-dot">
-        <div class="timeline-dot-inner">${t.icon || '✦'}</div>
-      </div>
-      <div class="timeline-content">
-        <p class="timeline-year">${t.year}</p>
-        <h3 class="timeline-title">${t.title}</h3>
-        <p class="timeline-desc">${t.description}</p>
-      </div>
-    `;
-    container.appendChild(item);
-  });
-})();
-
-// ── Certificates & Achievements ──────────────────────────────
-(function () {
-  function renderDynamicSection(containerId, items, emptyMsg) {
-    const c = document.getElementById(containerId);
-    if (!c) return;
-    if (!items || items.length === 0) {
-      c.innerHTML = `<p class="section-empty">${emptyMsg}</p>`;
-      return;
-    }
-    const grid = document.createElement('div');
-    grid.className = 'dynamic-grid';
-    items.forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'dynamic-card reveal';
-      card.innerHTML = `
-        ${item.image ? `<img src="${item.image}" alt="${item.title}" class="cert-img">` : ''}
-        <div class="dynamic-card-body">
-          <h4>${item.title}</h4>
-          ${item.description ? `<p>${item.description}</p>` : ''}
-          ${item.issuer ? `<p class="dynamic-card-meta">${item.issuer}</p>` : ''}
-          ${item.date   ? `<p class="dynamic-card-meta">${item.date}</p>` : ''}
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fab fa-github"></i></div>
+          <span id="contact-github-user"></span>
         </div>
-      `;
-      grid.appendChild(card);
-      
-      // Add lightbox click handler for certificate images
-      if (item.image) {
-        const img = card.querySelector('.cert-img');
-        img.addEventListener('click', () => {
-          const lightbox = document.getElementById('lightbox');
-          const lightboxImg = document.getElementById('lightbox-img');
-          if (lightbox && lightboxImg) {
-            lightboxImg.src = item.image;
-            lightboxImg.alt = item.title;
-            lightbox.classList.add('open');
-          }
-        });
-      }
-    });
-    c.appendChild(grid);
-  }
+      </div>
+      <form class="contact-form reveal-right" data-delay="3" id="contact-form">
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input id="contact-name" type="text" placeholder="Your full name" required/>
+        </div>
+        <div class="form-group">
+          <label for="contact-email-input">Email</label>
+          <input id="contact-email-input" type="email" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" placeholder="Tell me about your project…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold">Send Message</button>
+        <p class="form-note" id="form-note">Got it! ✦ I'll write back soon.</p>
+      </form>
+    </div>
+  </section>
 
-  renderDynamicSection('certs-container', DATA.certificates,
-    'Certificates will show up here once they land in data.js ✎');
-  renderDynamicSection('achievements-container', DATA.achievements,
-    'Little wins will show up here once they land in data.js ✎');
-})();
+  <footer>
+    <div class="footer-line"></div>
+    <p class="footer-name" id="footer-name"></p>
+    <p class="footer-title" id="footer-title"></p>
+    <div class="footer-socials" id="footer-socials"></div>
+    <p class="footer-copy" id="footer-copy"></p>
+  </footer>
+</main>
 
-// ── Gallery ──────────────────────────────────────────────────
-(function () {
-  const grid = document.getElementById('gallery-grid');
-  if (!grid) return;
-
-  if (!DATA.gallery || DATA.gallery.length === 0) {
-    grid.innerHTML = `<p class="section-empty">Photos will show up here once they land in data.js ✎</p>`;
-    return;
-  }
-
-  DATA.gallery.forEach(item => {
-    const image = typeof item === 'string' ? item : item.src;
-    const caption = typeof item === 'string' ? '' : item.caption || '';
-    const div = document.createElement('div');
-    div.className = 'masonry-item';
-    div.innerHTML = `<img src="${image}" alt="${caption}"><p class="gallery-caption">${caption}</p>`;
-    grid.appendChild(div);
-  });
-})();
-
-// ── Contact section info ─────────────────────────────────────
-(function () {
-  const emailEl  = document.getElementById('contact-email');
-  const ghUserEl = document.getElementById('contact-github-user');
-  if (emailEl)  emailEl.textContent  = DATA.email || '';
-  if (ghUserEl) ghUserEl.textContent = 'github.com/' + (DATA.githubUsername || '');
-})();
-
-// ── Footer ───────────────────────────────────────────────────
-(function () {
-  const nameEl    = document.getElementById('footer-name');
-  const titleEl   = document.getElementById('footer-title');
-  const socialsEl = document.getElementById('footer-socials');
-  const copyEl    = document.getElementById('footer-copy');
-
-  if (nameEl)  nameEl.textContent  = DATA.name  || 'Eswara Sai';
-  if (titleEl) titleEl.textContent = DATA.title || 'AI Application Architect';
-
-  if (socialsEl) {
-    const socials = [
-      { icon: 'fab fa-linkedin-in',  href: DATA.linkedin  || '#', label: 'LinkedIn' },
-      { icon: 'fab fa-instagram',    href: DATA.instagram || '#', label: 'Instagram' },
-      { icon: 'fab fa-github',       href: DATA.github    || '#', label: 'GitHub' },
-      { icon: 'fas fa-envelope',     href: 'mailto:' + (DATA.email || ''), label: 'Email' }
-    ];
-    socials.forEach(s => {
-      const a = document.createElement('a');
-      a.className = 'footer-social';
-      a.href  = s.href;
-      a.title = s.label;
-      a.target = '_blank';
-      a.innerHTML = `<i class="${s.icon}"></i>`;
-      socialsEl.appendChild(a);
-    });
-  }
-
-  if (copyEl) {
-    copyEl.textContent = `© ${new Date().getFullYear()} ${DATA.name || 'Eswara Sai'} · made with ♥ and lots of coffee`;
-  }
-})();
-</script>
-<script src="script.js"></script>
+<script src="/js/data.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>

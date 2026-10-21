@@ -5,394 +5,72 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <meta name="description" content="About Eswara Sai – AI Application Architect & Full Stack Developer"/>
   <title>About · Eswara Sai</title>
+  <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Patrick+Hand&family=Kalam:wght@400;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Kalam:wght@400;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    /* ── About page · hand-drawn notebook styles ──────────── */
-    .about-page-hero{
-      min-height:48vh; display:flex; flex-direction:column;
-      align-items:flex-start; justify-content:flex-end;
-      padding:9.5rem 6vw 4rem; position:relative; overflow:hidden;
-    }
-    .about-page-hero::after{
-      content:''; position:absolute; left:6vw; right:6vw; bottom:0; height:3px;
-      background:var(--ink); border-radius:4px; transform:rotate(-.2deg);
-    }
-    .about-page-hero .back-link{
-      font-family:var(--font-label); font-size:1.05rem; color:var(--ink);
-      display:inline-flex; align-items:center; gap:.6rem; margin-bottom:2.2rem;
-      background:var(--paper-card); border:2.5px solid var(--ink);
-      border-radius:22px 12px 20px 10px / 10px 20px 12px 22px;
-      box-shadow:3px 3px 0 var(--ink); padding:.35rem 1rem;
-      transform:rotate(-1.2deg);
-      transition:transform .2s var(--ease-spring), background .2s, box-shadow .2s;
-    }
-    .about-page-hero .back-link:hover{
-      transform:rotate(0) translate(-2px,-3px); background:var(--blue);
-      box-shadow:6px 7px 0 var(--ink);
-    }
-    .about-page-hero .page-eyebrow{
-      font-family:var(--font-label); font-size:1.05rem; letter-spacing:.12em;
-      text-transform:uppercase; color:var(--muted); margin-bottom:.4rem;
-    }
-    .about-page-hero .page-title{
-      font-family:var(--font-hand); font-weight:700;
-      font-size:clamp(3rem,9vw,6rem); line-height:.95;
-    }
-    .about-page-hero .page-title em{ font-style:normal; position:relative; display:inline-block; }
-    .about-page-hero .page-title em{
-      background:linear-gradient(transparent 60%, rgba(255,216,90,.85) 60%, rgba(255,216,90,.85) 96%, transparent 96%);
-      padding:0 .14em; transform:rotate(-.6deg);
-    }
-    .about-page-hero .doodle-about{ position:absolute; right:7vw; top:34%; width:120px; color:var(--ink); }
-    .about-page-hero .doodle-about path{ fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; }
-
-    /* Bio as a journal page */
-    .about-body{ background:var(--paper-dark); padding:5rem 6vw; }
-    .about-intro-grid{
-      display:grid; grid-template-columns:1.05fr .95fr; gap:3.5rem;
-      align-items:start; margin-top:0;
-    }
-    .about-text{
-      background:var(--paper-card);
-      border:3px solid var(--ink);
-      border-radius:255px 14px 225px 16px / 16px 225px 14px 255px;
-      box-shadow:8px 8px 0 var(--ink);
-      padding:2.4rem 2.2rem; position:relative;
-      background-image:repeating-linear-gradient(transparent 0 33px, rgba(23,23,23,.07) 33px 34px);
-    }
-    .about-text::before{
-      content:'my story ✎'; position:absolute; top:-18px; left:28px;
-      font-family:var(--font-hand); font-size:1.2rem;
-      background:var(--green); border:2.5px solid var(--ink);
-      border-radius:16px 8px 14px 7px / 7px 14px 8px 16px;
-      padding:0 .7rem; transform:rotate(-3deg);
-    }
-    .about-text p{ font-size:1.02rem; line-height:1.95; color:var(--muted); margin-bottom:1.2rem; }
-    .about-text p span{
-      color:var(--ink); font-weight:700;
-      background:linear-gradient(transparent 62%, var(--yellow) 62%);
-    }
-    .about-cards{ display:flex; flex-direction:column; gap:1.4rem; }
-    .about-card{
-      background:var(--paper-card);
-      border:2.5px solid var(--ink);
-      border-radius:22px 14px 24px 12px / 12px 24px 14px 22px;
-      box-shadow:5px 5px 0 var(--ink);
-      padding:1.4rem 1.6rem; position:relative;
-      transition:transform .3s var(--ease-spring), box-shadow .3s var(--ease-spring);
-    }
-    .about-card:nth-child(odd){ transform:rotate(-1deg); }
-    .about-card:nth-child(even){ transform:rotate(.9deg); }
-    .about-card:nth-child(4n+1){ background:var(--blue); }
-    .about-card:nth-child(4n+2){ background:var(--green); }
-    .about-card:nth-child(4n+3){ background:var(--pink); }
-    .about-card:nth-child(4n+4){ background:var(--lavender); }
-    .about-card:hover{ transform:rotate(0) translate(-3px,-5px); box-shadow:9px 11px 0 var(--ink); }
-    .about-card-icon{ font-size:1.5rem; margin-bottom:.4rem; }
-    .about-card h4{
-      font-family:var(--font-hand); font-weight:700; font-size:1.5rem;
-      margin-bottom:.4rem; color:var(--ink);
-    }
-    .about-card p{ font-size:.95rem; color:var(--ink-soft); line-height:1.65; }
-    .about-focus-tags{ display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.7rem; }
-    .about-focus-tag{
-      font-family:var(--font-label); font-size:.88rem; padding:.1rem .65rem;
-      border:2px solid var(--ink); border-radius:18px 7px 16px 6px / 6px 16px 7px 18px;
-      background:var(--paper-card); color:var(--ink);
-      transition:transform .2s var(--ease-spring);
-    }
-    .about-card:hover .about-focus-tag{ transform:rotate(-2deg); }
-
-    .skills-section{ padding:5.5rem 6vw; background:var(--paper); }
-    .timeline-section{ padding:5.5rem 6vw; background:var(--paper-dark); }
-
-    .about-cta-strip{
-      margin:0 6vw 4rem; padding:3rem 2.5rem;
-      background:var(--paper-card);
-      border:3px solid var(--ink);
-      border-radius:18px 240px 20px 230px / 230px 20px 240px 18px;
-      box-shadow:8px 8px 0 var(--ink);
-      display:flex; align-items:center; justify-content:space-between;
-      gap:2rem; flex-wrap:wrap;
-    }
-    .about-cta-strip h3{
-      font-family:var(--font-hand); font-weight:700;
-      font-size:clamp(1.9rem,4.4vw,2.9rem); line-height:1.1;
-    }
-    .about-cta-strip h3 em{ font-style:normal; position:relative; display:inline-block; }
-    .about-cta-strip h3 em::after{
-      content:''; position:absolute; left:0; right:-4%; bottom:-.08em; height:5px;
-      background:var(--accent-blue); border-radius:4px; transform:rotate(-.8deg);
-    }
-    .about-cta-strip .cta-buttons{ display:flex; gap:1rem; flex-wrap:wrap; }
-
-    @media (max-width:900px){
-      .about-intro-grid{ grid-template-columns:1fr; gap:2.4rem; }
-      .about-page-hero .doodle-about{ display:none; }
-      .about-cta-strip{ flex-direction:column; text-align:center; }
-      .about-cta-strip .cta-buttons{ justify-content:center; }
-    }
-    @media (max-width:600px){
-      .about-page-hero{ padding:8.5rem 6vw 3rem; }
-      .about-body, .skills-section, .timeline-section{ padding:4rem 6vw; }
-      .about-text{ padding:1.8rem 1.4rem; }
-      .about-card{ transform:none !important; }
-      .about-cta-strip{ padding:2.2rem 1.4rem; }
-    }
-  </style>
 </head>
 <body>
-
-<!-- ── Noise overlay ───────────────────────────────────────── -->
 <div id="noise"></div>
 
-
-<!-- ═══════════════════════════════════════════════════════════
-     NAVIGATION
-═══════════════════════════════════════════════════════════ -->
 <nav id="navbar">
-  <a href="index.html#hero" class="nav-logo">Eswara</a>
+  <a href="/" class="nav-logo">Eswara</a>
   <ul class="nav-links">
-    <li><a href="index.html#hero">Home</a></li>
-    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about.html" class="active" aria-current="page">About</a></li>
   </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div id="mobile-menu">
-  <a href="index.html#hero">Home</a><a href="about.html">About</a>
+  <a href="/">Home</a>
+  <a href="/about.html" aria-current="page">About</a>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     PAGE HERO
-═══════════════════════════════════════════════════════════ -->
-<div class="about-page-hero">
-  <a href="index.html" class="back-link reveal">
-    <i class="fas fa-arrow-left"></i> Back to Portfolio
-  </a>
-  <p class="page-eyebrow reveal">✎ the story</p>
-  <h1 class="page-title reveal" data-delay="1">About<br><em>Me</em></h1>
-  <svg class="doodle-about" viewBox="0 0 120 70" aria-hidden="true">
-    <path d="M6 10c30 2 58 16 82 44"/><path d="M70 56l20 1-5-19"/>
-  </svg>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
-     ABOUT INTRO
-═══════════════════════════════════════════════════════════ -->
-<section class="about-body">
-  <div class="about-intro-grid">
-    <!-- Left – Bio -->
-    <div class="about-text reveal-left" data-delay="2">
-      <p>
-        I am <span>Eswara Sai</span>, an aspiring <span>AI Application Architect</span>
-        and Full Stack Java Developer on a mission to bridge the gap between intelligent
-        machines and meaningful software experiences.
-      </p>
-      <p>
-        My journey is driven by a passion for building systems that are not just
-        functional — but <span>transformative</span>. Every line of code I write
-        carries the intent to solve real‑world problems at scale.
-      </p>
-      <p>
-        Currently deepening my expertise in <span>React</span>, <span>Spring Boot</span>,
-        and <span>AI integration patterns</span> while laying the foundation for
-        a career in enterprise AI architecture.
-      </p>
-      <div class="gold-divider"></div>
-      <p class="sticker">
-        ✦ &nbsp; Available for internships &amp; collaborations
-      </p>
-    </div>
-
-    <!-- Right – Info Cards -->
-    <div class="about-cards" id="about-cards"></div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     SKILLS
-═══════════════════════════════════════════════════════════ -->
-<section id="skills" class="skills-section">
-  <p class="section-label reveal">02 — what I know</p>
-  <h2 class="section-title reveal" data-delay="1">My<br><em>Toolbox</em></h2>
-  <div class="skills-categories" id="skills-container"></div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     TIMELINE
-═══════════════════════════════════════════════════════════ -->
-<section id="timeline" class="timeline-section">
-  <p class="section-label reveal">03 — how I got here</p>
-  <h2 class="section-title reveal" data-delay="1">My<br><em>Timeline</em></h2>
-  <div class="timeline-wrap">
-    <div class="timeline-line"></div>
-    <div class="timeline-items" id="timeline-items"></div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     CTA STRIP
-═══════════════════════════════════════════════════════════ -->
-<div class="about-cta-strip">
-  <h3>Ready to build<br><em>something great?</em></h3>
-  <div class="cta-buttons">
-    <a href="index.html#projects" class="btn btn-outline">View Projects</a>
-    <a href="index.html#contact" class="btn btn-gold">Get in Touch</a>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
-     FOOTER
-═══════════════════════════════════════════════════════════ -->
-<footer>
-  <div class="footer-line"></div>
-  <p class="footer-name" id="footer-name"></p>
-  <p class="footer-title" id="footer-title"></p>
-  <div class="footer-socials" id="footer-socials"></div>
-  <p class="footer-copy" id="footer-copy"></p>
-</footer>
-
-<div id="lightbox"><span id="lightbox-close">✕</span><img id="lightbox-img" src="" alt="Preview"/></div>
-
-<!-- ─── Scripts ─────────────────────────────────────────────── -->
-<script src="js/data.js"></script>
-<script>
-/* ── Skill icons / levels ─────────────────────────────────── */
-const SKILL_ICONS = {
-  'HTML':'<i class="fab fa-html5"></i>',
-  'CSS':'<i class="fab fa-css3-alt"></i>',
-  'JavaScript':'<i class="fab fa-js-square"></i>',
-  'React':'<i class="fab fa-react"></i>',
-  'Java':'<i class="fab fa-java"></i>',
-  'Spring Boot':'<i class="fas fa-leaf"></i>',
-  'Python':'<i class="fab fa-python"></i>',
-  'MySQL':'<i class="fas fa-database"></i>',
-  'Git':'<i class="fab fa-git-alt"></i>',
-  'GitHub':'<i class="fab fa-github"></i>',
-  'VS Code':'<i class="fas fa-code"></i>',
-  'IntelliJ IDEA':'<i class="fas fa-infinity"></i>',
-  'ChatGPT (Model GPT-5.5)':'<svg class="llm-icon" viewBox="0 0 2406 2406" aria-hidden="true"><g fill="currentColor"><path d="M1107.3 299.1c-197.999 0-373.9 127.3-435.2 315.3L650 743.5v427.9c0 21.4 11 40.4 29.4 51.4l344.5 198.515V833.3h.1v-27.9L1372.7 604c33.715-19.52 70.44-32.857 108.47-39.828L1447.6 450.3C1361 353.5 1237.1 298.5 1107.3 299.1zm0 117.5-.6.6c79.699 0 156.3 27.5 217.6 78.4-2.5 1.2-7.4 4.3-11 6.1L952.8 709.3c-18.4 10.4-29.4 30-29.4 51.4V1248l-155.1-89.4V755.8c-.1-187.099 151.601-338.9 339-339.2z"/><use href="#openai-mark" transform="rotate(60 1203 1203)"/><use href="#openai-mark" transform="rotate(120 1203 1203)"/><use href="#openai-mark" transform="rotate(180 1203 1203)"/><use href="#openai-mark" transform="rotate(240 1203 1203)"/><use href="#openai-mark" transform="rotate(300 1203 1203)"/></g><defs><path id="openai-mark" d="M1107.3 299.1c-197.999 0-373.9 127.3-435.2 315.3L650 743.5v427.9c0 21.4 11 40.4 29.4 51.4l344.5 198.515V833.3h.1v-27.9L1372.7 604c33.715-19.52 70.44-32.857 108.47-39.828L1447.6 450.3C1361 353.5 1237.1 298.5 1107.3 299.1zm0 117.5-.6.6c79.699 0 156.3 27.5 217.6 78.4-2.5 1.2-7.4 4.3-11 6.1L952.8 709.3c-18.4 10.4-29.4 30-29.4 51.4V1248l-155.1-89.4V755.8c-.1-187.099 151.601-338.9 339-339.2z"/></defs></svg>',
-  'Gemini (Model 3.1 Flash)':'<svg class="llm-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></svg>',
-  'Claude (Model Haiku 4.5, Sonnet 4.6)':'<svg class="llm-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#D97757" d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg>',
-  'AntigravityAI':'<svg class="llm-icon" viewBox="0 0 136 136" aria-hidden="true"><path fill="#3186FF" d="M89.6992 93.695C94.3659 97.195 101.366 94.8617 94.9492 88.445C75.6992 69.7783 79.7825 18.445 55.8659 18.445C31.9492 18.445 36.0325 69.7783 16.7825 88.445C9.78251 95.445 17.3658 97.195 22.0325 93.695C40.1159 81.445 38.9492 59.8617 55.8659 59.8617C72.7825 59.8617 71.6159 81.445 89.6992 93.695Z" transform="translate(12 10)"/></svg>'
-};
-const SKILL_LEVELS = {
-  'HTML':100,'CSS':100,'JavaScript':100,'React':100,
-  'Java':100,'Spring Boot':100,'Python':100,
-  'MySQL':100,
-  'Git':100,'GitHub':100,'VS Code':100,'IntelliJ IDEA':100,
-  'ChatGPT (Model GPT-5.5)':100,'Gemini (Model 3.1 Flash)':100,'Claude (Model Haiku 4.5, Sonnet 4.6)':100,'AntigravityAI':100
-};
-
-/* ── About Cards ──────────────────────────────────────────── */
-(function () {
-  const container = document.getElementById('about-cards');
-  if (!container) return;
-  const cards = [
-    { icon:'◎', heading:'Career Goal',     text:'To architect and deploy production-grade AI applications that create measurable impact at enterprise scale.' },
-    { icon:'◫', heading:'Education',       text:'Pursuing a degree in Computer Science with a focus on Software Engineering and Artificial Intelligence.' },
-    { icon:'◈', heading:'Learning Journey',text:'Self-driven learner exploring open-source ecosystems, technical documentation, and hands-on project building.' },
-    {
-      icon:'✦', heading:'Current Focus', isTagCard: true,
-      tags: ['AI Architecture','Full Stack Java','React','Spring Boot','System Design']
-    }
-  ];
-  cards.forEach((c, i) => {
-    const div = document.createElement('div');
-    div.className = 'about-card reveal';
-    div.dataset.delay = i + 2;
-    div.innerHTML = `
-      <div class="about-card-icon">${c.icon}</div>
-      <h4>${c.heading}</h4>
-      ${c.isTagCard
-        ? `<div class="about-focus-tags">${c.tags.map(t=>`<span class="about-focus-tag">${t}</span>`).join('')}</div>`
-        : `<p>${c.text}</p>`}
-    `;
-    container.appendChild(div);
-  });
-})();
-
-/* ── Skills ───────────────────────────────────────────────── */
-(function () {
-  const container = document.getElementById('skills-container');
-  if (!container || !DATA.skills) return;
-  Object.entries(DATA.skills).forEach(([cat, list]) => {
-    const wrap = document.createElement('div');
-    wrap.className = 'skills-category reveal';
-    const label = document.createElement('p');
-    label.className = 'skills-category-label';
-    label.textContent = cat;
-    wrap.appendChild(label);
-    const grid = document.createElement('div');
-    grid.className = 'skills-grid';
-    list.forEach(skill => {
-      const level = SKILL_LEVELS[skill] || 75;
-      const card  = document.createElement('div');
-      card.className = 'skill-card';
-      card.innerHTML = `
-        <span class="skill-icon">${SKILL_ICONS[skill] || '⬡'}</span>
-        <p class="skill-name">${skill}</p>
-        <div class="skill-bar"><div class="skill-bar-fill" data-width="${level}%"></div></div>
-      `;
-      grid.appendChild(card);
-    });
-    wrap.appendChild(grid);
-    container.appendChild(wrap);
-  });
-})();
-
-/* ── Timeline ─────────────────────────────────────────────── */
-(function () {
-  const container = document.getElementById('timeline-items');
-  if (!container || !DATA.timeline) return;
-  DATA.timeline.forEach((t, i) => {
-    const item = document.createElement('div');
-    item.className = 'timeline-item reveal';
-    item.dataset.delay = i + 1;
-    item.innerHTML = `
-      <div class="timeline-dot"><div class="timeline-dot-inner">${t.icon || '✦'}</div></div>
-      <div class="timeline-content">
-        <p class="timeline-year">${t.year}</p>
-        <h3 class="timeline-title">${t.title}</h3>
-        <p class="timeline-desc">${t.description}</p>
+<main class="about-page">
+  <header class="about-page-hero">
+    <p class="page-eyebrow reveal">A little about me</p>
+    <h1 class="page-title reveal" data-delay="1">About<br><em>Me</em></h1>
+    <svg class="doodle-about" viewBox="0 0 120 70" aria-hidden="true">
+      <path d="M6 10c30 2 58 16 82 44"/><path d="M70 56l20 1-5-19"/>
+    </svg>
+  </header>
+  <div class="about-body">
+    <div class="about-intro-grid">
+      <div class="about-text reveal-left" data-delay="2">
+        <p>I am <span>Eswara Sai</span>, an aspiring <span>AI Application Architect</span>
+          and Full Stack Java Developer on a mission to bridge the gap between intelligent
+          machines and meaningful software experiences.</p>
+        <p>My journey is driven by a passion for building systems that are not just
+          functional — but <span>transformative</span>. Every line of code I write
+          carries the intent to solve real-world problems at scale.</p>
+        <p>Currently deepening my expertise in <span>React</span>, <span>Spring Boot</span>,
+          and <span>AI integration patterns</span> while laying the foundation for
+          a career in enterprise AI architecture.</p>
+        <p class="sticker">✦ &nbsp; Available for internships &amp; collaborations</p>
       </div>
-    `;
-    container.appendChild(item);
-  });
-})();
+      <div class="about-cards" id="about-cards"></div>
+    </div>
+  </div>
 
-/* ── Footer ───────────────────────────────────────────────── */
-(function () {
-  const nameEl    = document.getElementById('footer-name');
-  const titleEl   = document.getElementById('footer-title');
-  const socialsEl = document.getElementById('footer-socials');
-  const copyEl    = document.getElementById('footer-copy');
-  if (nameEl)  nameEl.textContent  = DATA.name  || 'Eswara Sai';
-  if (titleEl) titleEl.textContent = DATA.title || 'AI Application Architect';
-  if (socialsEl) {
-    const socials = [
-      { icon:'fab fa-linkedin-in', href: DATA.linkedin  || '#', label:'LinkedIn' },
-      { icon:'fab fa-instagram',   href: DATA.instagram || '#', label:'Instagram' },
-      { icon:'fab fa-github',      href: DATA.github    || '#', label:'GitHub' },
-      { icon:'fas fa-envelope',    href:'mailto:' + (DATA.email || ''), label:'Email' }
-    ];
-    socials.forEach(s => {
-      const a = document.createElement('a');
-      a.className = 'footer-social';
-      a.href = s.href; a.title = s.label; a.target = '_blank';
-      a.innerHTML = `<i class="${s.icon}"></i>`;
-      socialsEl.appendChild(a);
-    });
-  }
-  if (copyEl) copyEl.textContent = `© ${new Date().getFullYear()} ${DATA.name || 'Eswara Sai'} · made with ♥ and lots of coffee`;
-})();
-</script>
-<script src="script.js"></script>
+  <section id="skills" class="skills-section">
+    <p class="section-label reveal">04 — what I know</p>
+    <h2 class="section-title reveal" data-delay="1">My<br><em>Toolbox</em></h2>
+    <div class="skills-categories" id="skills-container"></div>
+  </section>
+
+  <section id="timeline" class="timeline-section">
+    <p class="section-label reveal">05 — how I got here</p>
+    <h2 class="section-title reveal" data-delay="1">My<br><em>Timeline</em></h2>
+    <div class="timeline-wrap">
+      <div class="timeline-line"></div>
+      <div class="timeline-items" id="timeline-items"></div>
+    </div>
+  </section>
+</main>
+
+<script src="/js/data.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>
